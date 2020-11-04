@@ -10,6 +10,7 @@
 </style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<h3>목록</h3>
 	
 	<!-- 다이어리 -->	
@@ -44,12 +45,21 @@
 							<td>&nbsp;</td>
 						</c:if>
 						<c:if test="${i-(firstDayOfWeek-1) >0 }">
-							<c:if test="${i%7==1 }">
-								<td class="sunday">${i-(firstDayOfWeek-1)}</td>
-							</c:if>
-							<c:if test="${i%7!=1 }">
-								<td>${i-(firstDayOfWeek-1)}</td>
-							</c:if>
+							<td>
+								<div><a href="cashbookByDay?currentYear=${currentYear }&currentMonth=${currentMonth }&currentDay=${i-(firstDayOfWeek-1)}">${i-(firstDayOfWeek-1)}</a></div>
+								<c:forEach var="c" items="${cashList}">
+									<c:if test="${i-(firstDayOfWeek-1) == c.dday}">
+										<div>
+											<c:if test="${c.cashbookKind == '수입' }">
+												<div>수입 : ${c.cashbookPrice }</div>
+											</c:if>
+											<c:if test="${c.cashbookKind == '지출' }">
+												<div>지출 : ${c.cashbookPrice }</div>
+											</c:if>
+										</div>
+									</c:if>
+								</c:forEach>
+							</td>
 						</c:if>
 						<c:if test="${i%7 == 0}">
 							<tr></tr>
