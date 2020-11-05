@@ -7,15 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import kr.co.gdu.cash.service.IndexService;
+import kr.co.gdu.cash.service.NoticeService;
 
 @Controller
 public class IndexController {
-	@Autowired private IndexService indexService;
+	@Autowired private NoticeService NoticeService;
 	
-	@GetMapping(value= {"/","index"})
+	@GetMapping(value="/admin/index")
 	public String index(Model model) {
-		Map<String, Object> map = indexService.getNoticeAndInOutList();
+		Map<String, Object> map = NoticeService.getNoticeAndInOutList();
 		model.addAttribute("noticeList",map.get("noticeList"));
 		model.addAttribute("inOutList",map.get("inOutList"));
 		return "index";

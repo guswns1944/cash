@@ -9,10 +9,11 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<h1>index</h1>
+	<br>
+	<h1>공지사항</h1>
+	<a href="/admin/addNotice">공지사항 등록</a>
 	<div>
 		<!-- 공지 -->
-		<div>공지사항 <a href="/admin/noticeList">more</a></div>
 		<table border="1">
 			<thead>
 				<tr>
@@ -25,35 +26,22 @@
 				<c:forEach var="n" items="${noticeList }">
 					<tr>
 						<td>${n.noticeId }</td>
-						<td>${n.noticeTitle }</td>
+						<td><a href="/admin/noticeOne?noticeId=${n.noticeId }">${n.noticeTitle }</a></td>
 						<td>${n.noticeDate }</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+	<br>
 	<div>
-		<!-- 수입/지출/합계 -->
-		<table border="1">
-			<thead>
-				<tr>
-					<th>날짜</th>
-					<th>수입</th>
-					<th>지출</th>
-					<th>합계</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="io" items="${inOutList }">
-					<tr>
-						<td>${io["날짜"] }</td>
-						<td>${io["수입"] }</td>
-						<td>${io["지출"] }</td>
-						<td>${io["합계"] }</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<c:if test="${currentPage > 1}">
+			<a href="/admin/noticeList?currentPage=${currentPage-1 }">[이전]</a>
+		</c:if>
+		<c:if test="${currentPage < lastPage }">
+			<a href="/admin/noticeList?currentPage=${currentPage+1 }">[다음]</a>
+		</c:if>
 	</div>
+	
 </body>
 </html>

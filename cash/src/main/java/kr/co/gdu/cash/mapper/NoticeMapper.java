@@ -1,6 +1,7 @@
 package kr.co.gdu.cash.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,6 +9,12 @@ import kr.co.gdu.cash.vo.Notice;
 
 @Mapper
 public interface NoticeMapper {
-	// indexÈ­¸éÀÇ ÃÖ±Ù 5°³°øÁö¸¦ º¸¿©ÁÖ´Â ¸Ş¼­µå
+	// indexí™”ë©´ì˜ ìµœê·¼ 5ê°œì˜ ê³µì§€ë¥¼ ë³´ì—¬ì£¼ëŠ” ë©”ì„œë“œ
 	List<Notice> selectLatestNoiceList(); 
+	List<Notice> selectNoticeListByPage(Map<String,Integer> map);
+	int insertNotice(Notice notice);
+	int deleteNotice(int noticeId);
+	List<Notice> selectNoticeOne(int noticeId);
+	int modifyNoticeOne(Notice notice);
+	int totalNoticeCount();
 }

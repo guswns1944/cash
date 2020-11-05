@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.gdu.cash.service.CashbookService;
 import kr.co.gdu.cash.service.CategoryService;
-import kr.co.gdu.cash.service.IndexService;
+import kr.co.gdu.cash.service.NoticeService;
 import kr.co.gdu.cash.vo.Cashbook;
 import kr.co.gdu.cash.vo.Category;
 import kr.co.gdu.cash.vo.Notice;
@@ -23,10 +23,10 @@ public class CashbookController {
 	@Autowired private CashbookService cashbookService;
 	@Autowired private CategoryService categoryService;
 	
-	@PostMapping("/addCashbook")
+	@PostMapping("/admin/addCashbook")
 	public String addCashbook(Cashbook cashbook) { //커멘드 객체
 		cashbookService.addCashbook(cashbook);
-		return "redirect:/cashbookByMonth";
+		return "redirect:/admin/cashbookByMonth";
 	}
 	@GetMapping("/addCashbook")
 	public String addCashbook(Model model) {
@@ -35,7 +35,7 @@ public class CashbookController {
 		return "addCashbook";
 	}
 	
-	@GetMapping("/cashbookByDay")
+	@GetMapping("/admin/cashbookByDay")
 	public String cashbookByDay(Model model,
 			@RequestParam(name = "currentYear", required = true ) int currentYear,
 			@RequestParam(name = "currentMonth", required = true ) int currentMonth,
@@ -47,7 +47,7 @@ public class CashbookController {
 		return "cashbookByDay";
 	}
 	
-	@GetMapping(value="cashbookByMonth")
+	@GetMapping(value="/admin/cashbookByMonth")
 	public String cashbookByMonth(Model model,
 			@RequestParam(name = "currentYear", defaultValue = "-1") int currentYear,
 			@RequestParam(name = "currentMonth", defaultValue = "-1") int currentMonth) {
