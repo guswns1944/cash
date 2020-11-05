@@ -36,10 +36,16 @@
 	<br>
 	<div>
 		<c:if test="${currentPage > 1}">
+			<a href="/admin/noticeList?currentPage=1">[처음]</a>
+		</c:if>
+		<c:if test="${currentPage > 1}">
 			<a href="/admin/noticeList?currentPage=${currentPage-1 }">[이전]</a>
 		</c:if>
 		<c:if test="${currentPage < lastPage }">
 			<a href="/admin/noticeList?currentPage=${currentPage+1 }">[다음]</a>
+		</c:if>
+		<c:if test="${currentPage < lastPage }">
+			<a href="/admin/noticeList?currentPage=${lastPage }">[마지막]</a>
 		</c:if>
 	</div>
 	
