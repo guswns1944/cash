@@ -19,7 +19,16 @@ public class CashbookService {
 	public int addCashbook(Cashbook cashbook) {
 		return cashbookMapper.insertCashbook(cashbook);
 	}
-	
+	public Cashbook selectCashbookOne(int cashbookId) {
+		Cashbook cashbookOne = cashbookMapper.selectCashbookOne(cashbookId);
+		return cashbookOne;
+	}
+	public int modifyCashbook(Cashbook cashbook) {
+		return cashbookMapper.updateCashbook(cashbook);
+	}
+	public int deleteCashbook(int cashbookId) {
+		return cashbookMapper.deleteCashbook(cashbookId);
+	}
 	public List<Cashbook> getCashbookListByDay(int currentYear, int currentMonth, int currentDay){
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("currentYear", currentYear);

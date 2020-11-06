@@ -6,16 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<h1>cashbookListByDay</h1>
 	<div>
-	<a href="">이전</a>
-	${param.currentYear }년${param.currentMonth }월${param.currentDay }일
-	<a href="">이후</a>
+	<a href="/admin/cashbookByDay?target=pre&currentYear=${currentYear }&currentMonth=${currentMonth }&currentDay=${currentDay }">이전</a>
+	${currentYear }년${currentMonth }월${currentDay }일
+	<a href="/admin/cashbookByDay?target=next&currentYear=${currentYear }&currentMonth=${currentMonth }&currentDay=${currentDay }">이후</a>
 	</div>
-	<a href = "/admin/addCashbook?currentYear=${param.currentYear }&currentMonth=${param.currentMonth }&currentDay=${param.currentDay }">수입/지출 입력</a>
+	<a href = "/admin/addCashbook?currentYear=${currentYear }&currentMonth=${currentMonth }&currentDay=${currentDay }">수입/지출 입력</a>
 	<table border="1">
 		<thead>
 			<tr>
@@ -36,8 +41,8 @@
 					<td>${c.categoryName }</td>
 					<td>${c.cashbookPrice }</td>
 					<td>${c.cashbookContent }</td>
-					<td>수정</td>
-					<td>삭제</td>
+					<td><a href="/admin/modifyCashbookByDay?cashbookId=${c.cashbookId }">수정</a></td>
+					<td><a href="/admin/deleteCashbook?cashbookId=${c.cashbookId }&currentYear=${currentYear }&currentMonth=${currentMonth }&currentDay=${currentDay }">삭제</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
