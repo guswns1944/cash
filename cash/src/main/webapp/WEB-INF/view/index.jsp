@@ -44,7 +44,7 @@
 	
 	<div>
 		<!-- 공지 -->
-		<div>공지사항 <a href="/admin/noticeList">more</a></div>
+		<div>공지사항 <a href="/admin/noticeList/1">more</a></div>
 		<table border="1">
 			<thead>
 				<tr>

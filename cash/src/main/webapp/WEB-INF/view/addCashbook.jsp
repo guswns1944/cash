@@ -15,12 +15,12 @@
 
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<h1>addCashbook</h1>
-	<form method="post" action="/admin/addCashbook">
+	<form method="post" action="/admin/addCashbook/${currentYear }/${currentMonth }/${currentDay }">
 		<table border="1">
 			<tr>
 				<td>cashbook_date</td>
 				<td>
-					<input type="text" name="cashbookDate" value="${param.currentYear }-${param.currentMonth }-${param.currentDay } " readonly="readonly">
+					<input type="text" name="cashbookDate" value="${currentYear }-${currentMonth }-${currentDay } " readonly="readonly">
 				</td>
 			</tr>
 			<tr>

@@ -44,13 +44,13 @@
 			<tr>
 				<td>&nbsp;</td>
 				<td>
-				<a href="/admin/modifyNotice?noticeId=${n.noticeId }">수정</a>
-				<a href="/admin/removeNotice?noticeId=${n.noticeId }">삭제</a>
+				<a href="/admin/modifyNotice/${n.noticeId }">수정</a>
+				<a href="/admin/removeNotice/${n.noticeId }">삭제</a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/admin/noticeList">돌아가기</a>
+	<a href="/admin/noticeList/1">돌아가기</a>
 	
 </body>
 </html>
