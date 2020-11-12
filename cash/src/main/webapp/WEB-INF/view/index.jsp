@@ -1,69 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="${path }/style.css" rel="stylesheet" type="text/css" media="all" />
+
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
 
-
-	
-<div class="container">
-	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div>
-	<h1>index</h1>
-		<!-- 수입/지출/합계 -->
-		<table border="1">
-			<thead>
-				<tr>
-					<th>날짜</th>
-					<th>수입</th>
-					<th>지출</th>
-					<th>합계</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="io" items="${inOutList }">
-					<tr>
-						<td>${io["날짜"] }</td>
-						<td>${io["수입"] }</td>
-						<td>${io["지출"] }</td>
-						<td>${io["합계"] }</td>
-					</tr>
+<div id="wrapper">
+	<div id="page" class="container">
+		<div id="content"><a class="image-style" ><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
+			<div id="box1" class="post">
+				<h2 class="title"><a>welcome to my cashbook</a></h2>
+				<p>프로젝트 설명</p>
+			</div>
+			<div id="box2">
+				<h2 class="subtitle">Summary of recent income/expenses</h2>
+				<c:forEach var="io" items="${inOutList}">
+					<table id="inOutListTable">
+						<tr>
+							<th colspan="2">${io["날짜"]}</th>
+						</tr>
+						<tr>
+							<td>수입 : </td>
+							<td>${io["수입"]}</td>
+						</tr>
+						<tr>
+							<td>지출 : </td>
+							<td>${io["지출"]}</td>
+						</tr>
+						<tr>
+							<td>합계 : </td>
+							<td>${io["합계"]}</td>
+						</tr>
+					</table>
 				</c:forEach>
-			</tbody>
-		</table>
+				
+				<h2 class="noticeTitle">notice list</h2>
+				<table id="noticeListTable">
+					<thead>
+						<tr>
+							<th>notice_id</th>
+							<th>notice_title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="n" items="${noticeList}">
+							<tr>
+								<td>${n.noticeId}</td>
+								<td><a id = "noticeOne"href="/admin/noticeOne/${n.noticeId }">${n.noticeTitle}</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	</div>
-	
-	<div>
-		<!-- 공지 -->
-		<div>공지사항 <a href="/admin/noticeList/1">more</a></div>
-		<table border="1">
-			<thead>
-				<tr>
-					<th>notice_id</th>
-					<th>notice_title</th>
-					<th>notice_date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="n" items="${noticeList }">
-					<tr>
-						<td>${n.noticeId }</td>
-						<td>${n.noticeTitle }</td>
-						<td>${n.noticeDate }</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
+	<div class="clearfix">&nbsp;</div>
 </div>
+	
 </body>
 </html>

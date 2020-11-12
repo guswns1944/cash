@@ -21,6 +21,15 @@ import kr.co.gdu.cash.vo.Category;
 public class CashbookController {
 	@Autowired private CashbookService cashbookService;
 	@Autowired private CategoryService categoryService;
+	
+	@GetMapping("/admin/cashbookList/{currentPage}")
+	public String cashbookList(Model model, 
+			@PathVariable(name="currentPage", required= true) int currentPage) {
+		int rowPerPage = 20;
+		List<Cashbook> cashbookList = cashbookService.getCashbookListByPage(currentPage, rowPerPage);
+		model.addAttribute("cashbookList",cashbookList);
+		return "cashbookList";
+	}
 	//가계부 입력 액션
 	@PostMapping("/admin/addCashbook/{currentYear}/{currentMonth}/{currentDay}")
 	public String addCashbook(Cashbook cashbook,

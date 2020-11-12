@@ -1,0 +1,251 @@
+@charset "UTF-8";
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding: 0px;
+	background: #000000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	color: #6F644C;
+}
+
+h1, h2, h3
+{
+	margin: 0;
+	padding: 0;
+}
+
+h2
+{
+	text-transform: uppercase;
+	font-family: 'Fjalla One', sans-serif;
+	color: #000000;
+}
+
+p, ol, ul
+{
+	margin-top: 0px;
+}
+
+p
+{
+	line-height: 180%;
+}
+
+a
+{
+	color: #000000;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+.image-style img
+{
+	border-radius: 30px 0px 0px 0px;
+}
+
+hr
+{
+	display: none;
+}
+
+/** wrapper */
+
+#wrapper
+{
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.container
+{
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.clearfix
+{
+	clear: both;
+}
+
+/** HEADER */
+
+#header
+{
+	overflow: hidden;
+}
+
+/** LOGO */
+
+#logo
+{
+}
+
+#logo h1, #logo p
+{
+	margin: 0px;
+	line-height: normal;
+}
+
+#logo h1 a
+{
+	padding-left: 30px;
+	text-decoration: none;
+	font-family: 'Satisfy', cursive;
+	font-size: 2.20em;
+	font-weight: 700;
+	color: #FFFFFF;
+}
+
+/** MENU */
+
+#menu
+{
+}
+
+#menu ul
+{
+	margin: 0px;
+	padding: 20px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li
+{
+	padding: 0px 0px 20px 0px;
+}
+
+#menu a
+{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 1.50em;
+	color: #FFFFFF;
+}
+
+#menu a:hover
+{
+	text-decoration: underline;
+}
+
+/** PAGE */
+
+#page
+{
+	position: relative;
+}
+
+/** CONTENT */
+
+#content
+{
+	position: absolute;
+	right: 10px;
+	width: 725px;
+	padding: 10px 10px 4px 10px;
+	background: #EAEAEA;
+	box-shadow: inset 0px 0px 0px 10px rgba(255, 255, 255,0.50);
+	border-radius: 40px 0px 40px 0px;
+}
+
+#content h2 a
+{
+	display: block;
+	padding: 0px 0px 20px 0px;
+	text-decoration: none;
+	font-size: 1.50em;
+	color: #000000;
+	font-weight: 400;
+}
+
+#content .subtitle
+{
+	padding: 0px 0px 20px 0px;
+	font-size: 2.00em;
+	font-weight: 400;
+}
+
+#content .noticeTitle
+{
+	font-size: 2.00em;
+	font-weight: 400;
+}
+
+#content .post
+{
+	padding: 40px;
+}
+
+#content #inOutListTable{
+	float:left;
+    font-size:20px;
+    margin: 0px 10px 40px 35px;
+    text-align:center;
+}
+
+#content #inOutListTable th{
+	padding: 7px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #000000;
+    border-bottom: 5px solid #000000;
+}
+
+#content #inOutListTable td{
+    vertical-align: middle;
+    border-bottom: 3px solid #000000;
+}
+
+#content #noticeListTable{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	margin: 20px 0px 0px 0px;
+}
+#content #noticeOne{
+	text-decoration:none;
+}
+#content #noticeListTable th{
+	padding: 7px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #000000;
+    border-bottom: 5px solid #000000;
+}
+
+#box2 
+{
+	margin: 0px 40px;
+	padding: 40px 0px;
+	border-top: 1px solid #000000;
+}
+
+/** SIDEBAR */
+
+#sidebar
+{
+	position: absolute;
+	width: 270px;
+	left: -10px;
+	top: 50px;
+}
+
+.box
+{
+	overflow: hidden;
+	padding: 40px 40px;
+	background: #000000;
+	box-shadow: inset 0px 0px 0px 10px rgba(255, 255, 255,0.90);
+	border-radius: 0px 40px 0px 40px;
+}
