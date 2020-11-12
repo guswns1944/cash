@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-<link href="${path }/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body>

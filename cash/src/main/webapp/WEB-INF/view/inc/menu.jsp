@@ -16,7 +16,7 @@
 	        <a href="/admin/cashbookList/1">cashbookList</a>
 	      </li>
 	       <li >
-	        <a href="/admin/cashStats.html">cashStats</a>
+	        <a href="/admin/noticeList/1">noticeList</a>
 	      </li>
 	       <li >
 	        <a href="/admin/chart1.jsp">chart</a>

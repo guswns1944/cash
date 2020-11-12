@@ -14,7 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<h1>가계부 수정</h1>
-	<form method="post" action="/admin/modifyCashbookByDay">
+	<form method="post" action="/admin/modifyCashbookByDay/${currentYear }/${currentMonth }/${currentDay }">
 		<table border="1">
 			<tr>
 				<td>cashbook_id :</td>

@@ -10,7 +10,7 @@
 	.sunday {color: red}
 </style>
 <link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-<link href="${path }/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
@@ -31,7 +31,7 @@
 		이번달 지출 합계 : ${sumOut }
 	</div>
 	<div>
-		<table border="1" width="100%">
+		<table border="1" style="width:100%;">
 			<thead>
 				<tr>
 					<th>일</th>
@@ -80,6 +80,7 @@
 				</tr>
 			</tbody>
 		</table>
+		<br>
 	</div>
 	</div>
 	</div>

@@ -47,15 +47,15 @@ public class CashbookController {
 			@PathVariable(name = "currentDay", required = true ) int currentDay) {
 		List<Category> categoryList = categoryService.getCategoryList();
 		model.addAttribute("categoryList", categoryList);
-		model.addAttribute("currentYear",currentYear);
-		model.addAttribute("currentMonth",currentMonth);
-		model.addAttribute("currentDay",currentDay);
 		return "addCashbook";
 	}
 	//가계부 수정 폼
-	@GetMapping("/admin/modifyCashbookByDay/{cashbookId}")
+	@GetMapping("/admin/modifyCashbookByDay/{cashbookId}/{currentYear}/{currentMonth}/{currentDay}")
 	public String modifyCashbook(Model model,
-			@PathVariable(value="cashbookId")int cashbookId) {
+			@PathVariable(value= "cashbookId") int cashbookId,
+			@PathVariable(name = "currentYear", required = true ) int currentYear,
+			@PathVariable(name = "currentMonth", required = true ) int currentMonth,
+			@PathVariable(name = "currentDay", required = true ) int currentDay) {
 		Cashbook cashbook = cashbookService.selectCashbookOne(cashbookId);
 		List<Category> categoryList = categoryService.getCategoryList();
 		System.out.println(cashbook);
@@ -64,10 +64,13 @@ public class CashbookController {
 		return "modifyCashbookByDay";
 	}
 	//가계부 수정 액션
-	@PostMapping("/admin/modifyCashbookByDay")
-	public String modifyCashbookAction(Cashbook cashbook) {
+	@PostMapping("/admin/modifyCashbookByDay/{currentYear}/{currentMonth}/{currentDay}")
+	public String modifyCashbookAction(Cashbook cashbook,
+			@PathVariable(name = "currentYear", required = true ) int currentYear,
+			@PathVariable(name = "currentMonth", required = true ) int currentMonth,
+			@PathVariable(name = "currentDay", required = true ) int currentDay) {
 		cashbookService.modifyCashbook(cashbook);
-		return "redirect:/admin/cashbookByMonth/now/-1/-1";
+		return "redirect:/admin/cashbookByDay/now/{currentYear}/{currentMonth}/{currentDay}";
 	}
 	//public String modifyCashbook()
 	//가계부 삭제
