@@ -6,9 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-	.sunday {color: red}
-</style>
+
 <link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
 <link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
@@ -22,16 +20,21 @@
 	<div>
 		이번달 수입 합계 : ${sumIn }
 	</div>
-	<h3>
+	<h2 class="title" id="center"><a>
+	${currentYear }년 ${currentMonth } 월
+	</a></h2>
+	<div id="btnStyle2">
 		<a href="/admin/cashbookByMonth/pre/${currentYear}/${currentMonth}">[이전달]</a>
-		${currentYear }년 ${currentMonth } 월
+	</div>	
+	<div id="btnStyle">
 		<a href="/admin/cashbookByMonth/next/${currentYear}/${currentMonth}">[다음달]</a>
-	</h3>	
+	</div>
+		
 	<div>
 		이번달 지출 합계 : ${sumOut }
 	</div>
 	<div>
-		<table border="1" style="width:100%;">
+		<table id="cashbookTable">
 			<thead>
 				<tr>
 					<th>일</th>
@@ -55,12 +58,12 @@
 								
 								<c:forEach var="c" items="${cashList}">
 									<c:if test="${i-(firstDayOfWeek-1) == c.dday}">
-										<div>
+										<div id="cashStyle">
 											<c:if test="${c.cashbookKind == '수입' }">
-												<div>수입 : ${c.cashbookPrice }</div>
+												<div class="green">${c.cashbookPrice }</div>
 											</c:if>
 											<c:if test="${c.cashbookKind == '지출' }">
-												<div>지출 : ${c.cashbookPrice }</div>
+												<div class="red">${c.cashbookPrice }</div>
 											</c:if>
 										</div>
 									</c:if>
