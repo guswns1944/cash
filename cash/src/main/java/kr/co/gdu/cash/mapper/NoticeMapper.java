@@ -14,7 +14,7 @@ public interface NoticeMapper {
 	List<Notice> selectNoticeListByPage(Map<String,Integer> map);
 	int insertNotice(Notice notice);
 	int deleteNotice(int noticeId);
-	List<Notice> selectNoticeOne(int noticeId);
+	Notice selectNoticeOne(int noticeId);
 	int modifyNoticeOne(Notice notice);
 	int totalNoticeCount();
 }

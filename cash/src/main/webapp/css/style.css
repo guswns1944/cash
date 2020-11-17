@@ -104,7 +104,9 @@ hr
 	font-weight: 700;
 	color: #FFFFFF;
 }
-
+#right{
+	text-align:right;
+}
 #center{
 	text-align:center;
 }
@@ -185,6 +187,24 @@ hr
 	font-weight: 400;
 }
 
+#content #noticeListTable{
+	width: 100%;
+	text-align: center;
+	font-size: 17px;
+	margin: 20px 0px 0px 0px;
+}
+
+#content #noticeListTable th{
+	padding: 7px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #000000;
+    border-bottom: 5px solid #000000;
+}
+
+#content #noticeOne{
+	text-decoration:none;
+}
 #content .post
 {
 	padding: 40px;
@@ -213,7 +233,7 @@ hr
 #content #fullListTable{
 	width: 100%;
 	text-align: center;
-	font-size: 20px;
+	font-size: 12px;
 	margin: 10px 0px 15px 0px;
 }
 
@@ -282,10 +302,6 @@ hr
 	top:1px;
 }
 
-#content #btnStyle2 a:hover{
-	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-	background-color:#e9e9e9;
-}
 
 
 #content #btnStyle a{
@@ -309,10 +325,7 @@ hr
 	top:1px;
 }
 
-#content #btnStyle a:hover{
-	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-	background-color:#e9e9e9;
-}
+
 
 #content #btnStyle button{
 	background-color:#000000;
@@ -320,7 +333,7 @@ hr
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
 	padding:6px;
 	text-decoration:none;
@@ -330,11 +343,6 @@ hr
 #content #btnStyle button:active{
 	position:relative;
 	top:1px;
-}
-
-#content #btnStyle button:hover{
-	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-	background-color:#e9e9e9;
 }
 
 
@@ -351,10 +359,15 @@ hr
     color: #000000;
 }
 
-#content #oneListTable input{
+#content #oneListTable input[type=text]{
 	border-radius:5px;
 	padding:4px;
 	width: 100%;
+}
+
+#content #oneListTable input[type=radio]{
+	border-radius:5px;
+	padding:4px;
 }
 
 #content #oneListTable textarea{
@@ -367,6 +380,25 @@ hr
 	border-radius:5px;
 	padding:4px;
 	width: 100%;
+}
+
+#content #memberListTable{
+	width: 100%;
+	text-align: center;
+		margin: 0px 0px 10px 0px;
+}
+
+#content #memberListTable input[type=text]{
+	border-radius:5px;
+	padding:4px;
+	width: 80%;
+	margin: 0px 0px 10px 0px;
+}
+
+#content #memberListTable input[type=password]{
+	border-radius:5px;
+	padding:4px;
+	width: 80%;
 }
 
 #content #cashbookTable{
@@ -386,7 +418,7 @@ hr
 
 #content #cashbookTable td{
 	vertical-align: top;
-	height:110px;
+	height:90px;
 }
 
 #content #cashbookTable a{
@@ -418,7 +450,7 @@ hr
 }
 
 #content #cashStyle{
-	padding:15px;
+	padding:5px;
 	text-align:right;
 }
 

@@ -23,5 +23,5 @@ public interface CashbookMapper {
 	List<Cashbook> selectCashbookListByPage(Map<String, Object> map);
 	//전체 cashbookList를 엑셀파일로 변환
 	List<Cashbook> selectCashbookListAll();
-	
+	int cashbookCount();
 }

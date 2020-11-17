@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 </head>
-<body style="background-color: #B2CCFF;">
+<body style="background-color: #fff;">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
@@ -25,7 +25,7 @@
 				<input type="password" class= "form-control"name="pw" placeholder="비밀번호를 입력해주세요.">
 			</div>
 			<div>
-				<button type="submit"  style=" color: #fff; font-size: 14px; width: 100%; height: 44px; background: #f75f52;" >로그인</button>
+				<button type="submit"  style=" color: #fff; font-size: 14px; width: 100%; height: 44px; background: #808080;" >로그인</button>
 			</div>
 		</form>
 		<br><br><br>

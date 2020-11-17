@@ -1,58 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-
-	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<br>
-	<h1>공지사항</h1>
-	<a href="/admin/addNotice">공지사항 등록</a>
-	<div>
-		<!-- 공지 -->
-		<table border="1">
-			<thead>
-				<tr>
-					<th>notice_id</th>
-					<th>notice_title</th>
-					<th>notice_date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="n" items="${noticeList }">
-					<tr>
-						<td>${n.noticeId }</td>
-						<td><a href="/admin/noticeOne/${n.noticeId }">${n.noticeTitle }</a></td>
-						<td>${n.noticeDate }</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+<div id ="wrapper">
+	<div id="page" class="container">
+		<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+			<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
+				<div id="box1" class="post">
+					<!-- 공지 -->
+					<h2 class="title" id="center"><a>공지사항</a></h2>
+					<div id="btnStyle">
+					<a href="/admin/addNotice">공지사항 등록</a>
+					</div>
+					<table id="noticeListTable">
+						<thead>
+							<tr>
+								<th>notice_id</th>
+								<th>notice_title</th>
+								<th>notice_date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="n" items="${noticeList }">
+								<tr>
+									<td>${n.noticeId }</td>
+									<td><a id="noticeOne" href="/admin/noticeOne/${n.noticeId }">${n.noticeTitle }</a></td>
+									<td>${n.noticeDate }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+				<div id="paging">
+					<c:if test="${currentPage > 1}">
+						<a href="/admin/noticeList/1"><<</a>
+					</c:if>
+					<c:choose>
+						<c:when test="${lastPage < 4 }">
+							<c:forEach var="i" begin="${1}" end="${lastPage}">
+								<c:choose>
+									<c:when test="${i eq currentPage}">
+										<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+									</c:when>
+									<c:otherwise>
+										<a href="/admin/noticeList/${i}">${i}</a>	
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${currentPage < 4}">
+									<c:forEach var="i" begin="${1}" end="${5}">
+										<c:choose>
+											<c:when test="${i eq currentPage}">
+												<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+											</c:when>
+											<c:otherwise>
+												<a href="/admin/noticeList/${i}">${i}</a>	
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+								<c:when test="${currentPage > lastPage-3}">
+									<c:forEach var="i" begin="${lastPage-4}" end="${lastPage}">
+										<c:choose>
+											<c:when test="${i eq currentPage}">
+												<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+											</c:when>
+											<c:otherwise>
+												<a href="/admin/noticeList/${i}">${i}</a>	
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="i" begin="${currentPage-2}" end="${currentPage+2}">
+										<c:choose>
+											<c:when test="${i eq currentPage}">
+												<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+											</c:when>
+											<c:otherwise>
+												<a href="/admin/noticeList/${i}">${i}</a>	
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</c:otherwise>
+					</c:choose>
+					<c:if test="${currentPage < lastPage }">
+						<a href="/admin/noticeList/${lastPage }">>></a>
+					</c:if>
+				</div>
+			</div>
 	</div>
-	<br>
-	<div>
-		<c:if test="${currentPage > 1}">
-			<a href="/admin/noticeList/1">[처음]</a>
-		</c:if>
-		<c:if test="${currentPage > 1}">
-			<a href="/admin/noticeList/${currentPage-1 }">[이전]</a>
-		</c:if>
-		<c:if test="${currentPage < lastPage }">
-			<a href="/admin/noticeList/${currentPage+1 }">[다음]</a>
-		</c:if>
-		<c:if test="${currentPage < lastPage }">
-			<a href="/admin/noticeList/${lastPage }">[마지막]</a>
-		</c:if>
-	</div>
-	
+</div>
 </body>
 </html>

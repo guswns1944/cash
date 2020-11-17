@@ -11,28 +11,24 @@
 <link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	
 	<div id="wrapper">
 	<div id="page" class="container">
+	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 		<div id="content"><a class="image-style"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 	
 	<!-- 다이어리 -->	
-	<div>
-		이번달 수입 합계 : ${sumIn }
-	</div>
+
 	<h2 class="title" id="center"><a>
 	${currentYear }년 ${currentMonth } 월
 	</a></h2>
 	<div id="btnStyle2">
-		<a href="/admin/cashbookByMonth/pre/${currentYear}/${currentMonth}">[이전달]</a>
+		<a href="/admin/cashbookByMonth/pre/${currentYear}/${currentMonth}"><</a>
 	</div>	
 	<div id="btnStyle">
-		<a href="/admin/cashbookByMonth/next/${currentYear}/${currentMonth}">[다음달]</a>
+		<a href="/admin/cashbookByMonth/next/${currentYear}/${currentMonth}">></a>
 	</div>
 		
-	<div>
-		이번달 지출 합계 : ${sumOut }
-	</div>
 	<div>
 		<table id="cashbookTable">
 			<thead>
@@ -83,6 +79,13 @@
 				</tr>
 			</tbody>
 		</table>
+		<div>
+		<h3 id="right">이번달 수입 : ${sumIn }</h3>
+		</div>
+		<div>
+		<h3 id="right">이번달 지출 : ${sumOut }</h3>
+		</div>
+		
 		<br>
 	</div>
 	</div>

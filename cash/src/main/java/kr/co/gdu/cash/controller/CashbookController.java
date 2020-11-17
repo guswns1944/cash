@@ -27,7 +27,14 @@ public class CashbookController {
 			@PathVariable(name="currentPage", required= true) int currentPage) {
 		int rowPerPage = 20;
 		List<Cashbook> cashbookList = cashbookService.getCashbookListByPage(currentPage, rowPerPage);
+		int count = cashbookService.getCashbookCount();
+		int lastPage = count/rowPerPage;
+		if(count%rowPerPage !=0) {
+			lastPage +=1;
+		}
 		model.addAttribute("cashbookList",cashbookList);
+		model.addAttribute("currentPage",currentPage);
+		model.addAttribute("lastPage",lastPage);
 		return "cashbookList";
 	}
 	//가계부 입력 액션

@@ -51,7 +51,7 @@ public class NoticeController {
 	@GetMapping("/admin/noticeOne/{noticeId}")
 	public String noticeOne(Model model,
 			@PathVariable(value="noticeId") int noticeId) {
-		List<Notice> noticeOne = noticeService.getNoticeOne(noticeId);
+		Notice noticeOne = noticeService.getNoticeOne(noticeId);
 		model.addAttribute("noticeOne",noticeOne);
 		return "noticeOne";
 	}
@@ -65,7 +65,7 @@ public class NoticeController {
 	@GetMapping("/admin/modifyNotice/{noticeId}")
 	public String modifyNotice(Model model,
 			@PathVariable(value="noticeId")int noticeId) {
-		List<Notice> noticeOne = noticeService.getNoticeOne(noticeId);
+		Notice noticeOne = noticeService.getNoticeOne(noticeId);
 		model.addAttribute("noticeOne",noticeOne);
 		return "modifyNotice";
 	}

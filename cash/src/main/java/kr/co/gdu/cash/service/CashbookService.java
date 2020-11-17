@@ -16,6 +16,9 @@ import kr.co.gdu.cash.vo.Cashbook;
 public class CashbookService {
 	@Autowired private CashbookMapper cashbookMapper;
 	
+	public int getCashbookCount() {
+		return cashbookMapper.cashbookCount();
+	}
 	public List<Cashbook> getCashbookListAll(){
 		return cashbookMapper.selectCashbookListAll();
 	}

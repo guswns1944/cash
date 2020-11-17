@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 
 <link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-<link href="${path }/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function(){
@@ -40,23 +40,34 @@
 </script>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div id="wrapper">
-		<div id="page" class="container">
+<div id="wrapper">
+	<div id="page" class="container">
+		<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 			<div id="content"><a class="image-style"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
-				<form method="post" action="/admin/addMember">
-					<div>
-						ID: <input type="text" id="id" name="id">
-					</div>
-					<div>
-						pw: <input type="password" id="id" name="pw">
-					</div>
-					<div>
-					<button type="submit" id="addMember">addMember</button>
-					</div>
-				</form>
+				<div id="box1" class="post">
+				
+					<form method="post" action="/admin/addMember">
+						<table id="memberListTable">
+							<tr>
+								<td>ID: </td>
+								<td>
+									<input type="text" id="id" name="id">
+								</td>
+							</tr>
+							<tr>
+								<td>PW: </td>
+								<td>
+									<input type="password" id="id" name="pw">
+								</td>
+							</tr>
+						</table>
+						<div id="btnStyle">
+						<button type="submit" id="addMember">addMember</button>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
 	</div>
+</div>
 </body>
 </html>

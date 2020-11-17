@@ -27,7 +27,7 @@ public class NoticeService {
 		return noticeMapper.modifyNoticeOne(notice);
 	}
 	//상세 공지사항 보기
-	public List<Notice> getNoticeOne(int noticeId){
+	public Notice getNoticeOne(int noticeId){
 		return noticeMapper.selectNoticeOne(noticeId);
 	}
 	//공지사항 삭제
