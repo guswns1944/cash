@@ -2,21 +2,21 @@
     pageEncoding="UTF-8"%>
  <div id="sidebar">
   	<div id="logo">
-  		<h1><a href="#">Cashbook</a></h1>
+  		<h1><a href="/admin/index">Cashbook</a></h1>
   	</div>
   	<div id="menu" class="box">
 	    <ul>
 	      <li>
-	        <a href="/admin/chart1.jsp">chart1</a>
+	        <a href="/admin/chart1.jsp">연도별 월 지출 내역</a>
 	      </li>
 	      <li>
-	        <a href="/admin/chart2.jsp">chart2</a>
+	        <a href="/admin/chart2.jsp">연도별 수입/지출</a>
 	      </li>
 	      <li>
-	        <a href="/admin/chart3.jsp">chart3</a>
+	        <a href="/admin/chart3.jsp">연도별 지출 카테고리 내역</a>
 	      </li>
 	      <li>
-	        <a href="/admin/chart4.jsp">chart4</a>
+	        <a href="/admin/chart4.jsp">연도별 월별 수입/지출 합계</a>
 	      </li>
 	      <li>
 	        <a href="/admin/chart5.jsp">chart5</a>

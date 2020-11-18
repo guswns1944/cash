@@ -461,6 +461,30 @@ hr
 #content #cashStyle .green{
 	color: #00B700;
 }
+#content #chartTable{
+	width: 100%;
+	font-size:15px;
+	text-align: center;
+}
+
+#content #chartTable input[type=text]{
+	border-radius:5px;
+	padding:4px;
+	width: 50%;
+}
+
+#chartTable {
+	width: 100%;
+	text-align: center;
+}
+
+#chartTable th{
+	padding: 5px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #000000;
+    border-bottom: 5px solid #000000;
+}
 
 #box2 
 {

@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CashStatsMapper {
-	public Map<String, Object> selectTotalOfMonthByYear();
+	public Map<String, Object> selectTotalOfMonthByYear(int year);
 	public Map<String, Object> selectTotalOutAndInByYear(int year);
+	public Map<String, Object> selectCategoryByYear(int year);
+	public Map<String, Object> selectTotalSumInOutByYear(int year);
 }

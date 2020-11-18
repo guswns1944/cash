@@ -1,36 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="${path }/css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+<div id="wrapper">
+	<div id="page" class="container">
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
-	<h1>chart2</h1>
-	<h3>연도별 수입/지출</h3>
-	<!-- 출력 -->
-	
-
-	<!-- chart -->
-	<div>
-		<div><!-- 0) 호출 -->
-			<span> 연도별 수입/지출 :</span>
-			<input type="text" id="year">
-			<button id="totalOutAndInByYearChart" type="button">Chart</button>
-		</div>
-		<div>
-			<span id="totalOutAndInByYear"></span>
-		</div>
-		<div>
-			<canvas id="pieChart"></canvas>
+		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
+			<div id="box1" class="post">
+				<h2><a>연도별 수입/지출</a></h2>
+				<!-- chart -->
+				<div>
+					<div id="chartTable"><!-- 0) 호출 -->
+						<span> 연도를 입력하세요 :</span>
+						<input type="text" id="year">
+						<button id="totalOutAndInByYearChart" type="button">Chart</button>
+					</div>
+					<br>
+					<div>
+						<span id="totalOutAndInByYear"></span>
+					</div>
+					<div id="chartContainer">
+						<canvas id="pieChart"></canvas>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-		
+</div>
 	<!-- table -->
 	
 </body>
@@ -38,6 +44,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
 	$('#totalOutAndInByYearChart').click(function(){
+		$('#pieChart').remove();
+		$("#chartContainer").append('<canvas id="pieChart"></canvas>');
+		$('#pieChart').empty();
 		$.ajax({
 			url:'/admin/totalOutAndInByYear/'+$('#year').val(),
 			type:'get',
@@ -66,7 +75,7 @@
 				success: function(data){
 					console.log(data);
 					let html=`
-						<table border="1">
+						<table id="chartTable">
 							<tr>
 								<th>수입</th>
 								<th>지출</th>

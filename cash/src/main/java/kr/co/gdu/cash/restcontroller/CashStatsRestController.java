@@ -14,13 +14,21 @@ import kr.co.gdu.cash.restservice.CashStatsService;
 public class CashStatsRestController {
 	@Autowired CashStatsService cashStatsService;
 	//Logger loger = Logger();
-	@GetMapping("/admin/totalOfMonthByYear")
-	public Map<String, Object> totalOfMonthByYear(){
+	@GetMapping("/admin/totalOfMonthByYear/{year}")
+	public Map<String, Object> totalOfMonthByYear(@PathVariable(name="year") int year){
 		System.out.println("totalOfMonthByYear 호출 성공");
-		return cashStatsService.getTotalOfMonthByYear(); // RestController
+		return cashStatsService.getTotalOfMonthByYear(year); // RestController
 	}
 	@GetMapping("/admin/totalOutAndInByYear/{year}")
 	public Map<String, Object> totalOutAndInByYear(@PathVariable(name="year") int year ){
 		return cashStatsService.getTotalOutAndInByYear(year);
+	}
+	@GetMapping("/admin/categoryByYear/{year}")
+	public Map<String, Object> categoryByYear(@PathVariable(name="year") int year){
+		return cashStatsService.getCategoryByYear(year);
+	}
+	@GetMapping("/admin/totalSumInOutByYear/{year}")
+	public Map<String, Object> totalSumInOutByYear(@PathVariable(name="year") int year){
+		return cashStatsService.getTotalSumInOutByYear(year);
 	}
 }

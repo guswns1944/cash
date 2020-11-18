@@ -12,11 +12,17 @@ import kr.co.gdu.cash.restmapper.CashStatsMapper;
 @Transactional
 public class CashStatsService {
 	@Autowired CashStatsMapper cashStatsMapper;
-	public Map<String, Object> getTotalOfMonthByYear(){
-		return cashStatsMapper.selectTotalOfMonthByYear();
+	public Map<String, Object> getTotalOfMonthByYear(int year){
+		return cashStatsMapper.selectTotalOfMonthByYear(year);
 	}
 	
 	public Map<String, Object> getTotalOutAndInByYear(int year){
 		return cashStatsMapper.selectTotalOutAndInByYear(year);
+	}
+	public Map<String, Object> getCategoryByYear(int year){
+		return cashStatsMapper.selectCategoryByYear(year);
+	}
+	public Map<String, Object> getTotalSumInOutByYear(int year){
+		return cashStatsMapper.selectTotalSumInOutByYear(year);
 	}
 }
