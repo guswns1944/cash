@@ -1,6 +1,7 @@
 package kr.co.gdu.cash.restcontroller;
 
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,10 @@ import kr.co.gdu.cash.restservice.CashStatsService;
 public class CashStatsRestController {
 	@Autowired CashStatsService cashStatsService;
 	//Logger loger = Logger();
+	@GetMapping("/admin/totalOutMonthCategoryByYear/{year}")
+	public List<Map<String, Object>> totalOutMonthCategoryByYear(@PathVariable(name="year") int year){
+		return cashStatsService.getTotalOutMonthCategoryByYear(year);
+	}
 	@GetMapping("/admin/totalOfMonthByYear/{year}")
 	public Map<String, Object> totalOfMonthByYear(@PathVariable(name="year") int year){
 		System.out.println("totalOfMonthByYear 호출 성공");
