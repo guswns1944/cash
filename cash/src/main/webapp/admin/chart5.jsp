@@ -17,7 +17,7 @@
 	<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
-				<h2><a>연도별 월 지출 카테고리</a></h2>
+				<h2><a>월별 지출 카테고리</a></h2>
 				<!-- chart -->
 				<div>
 					<div id="chartTable"><!-- 0) 호출 -->
@@ -102,9 +102,12 @@
 		});
 		$('#totalOutMonthCategoryByYear').html('totalOutMonthCategoryByYear');
 		$.ajax({
+			
 			url:'/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
 			type:'get',
+			dataType: 'json',
 			success:function(data){
+				console.log(data);
 				let html=`
 					<table id="chartTable">
 						<thead>
@@ -155,27 +158,77 @@
 								<td>\${data[3].may}</td>
 								<td>\${data[3].june}</td>
 							</tr>
+							<tr>
+								<td>\${data[4].category_name}</td>
+								<td>\${data[4].january}</td>
+								<td>\${data[4].february}</td>
+								<td>\${data[4].march}</td>
+								<td>\${data[4].april}</td>
+								<td>\${data[4].may}</td>
+								<td>\${data[4].june}</td>
+							</tr>
 						</tbody>
 					</table>
 					<table id="chartTable">
-					<tr>
-						<th>카테고리</th>
-						<th>july</th>
-						<th>august</th>
-						<th>september</th>
-						<th>october</th>
-						<th>november</th>
-						<th>december</th>
-					</tr>
-					<tr>
-						<td>\${data[0].category_name}</td>
-						<td>\${data[0].july}</td>
-						<td>\${data[0].august}</td>
-						<td>\${data[0].september}</td>
-						<td>\${data[0].october}</td>
-						<td>\${data[0].november}</td>
-						<td>\${data[0].december}</td>
-					</tr>
+						<thead>
+							<tr>
+								<th>카테고리</th>
+								<th>july</th>
+								<th>august</th>
+								<th>september</th>
+								<th>october</th>
+								<th>november</th>
+								<th>december</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>\${data[0].category_name}</td>
+								<td>\${data[0].july}</td>
+								<td>\${data[0].august}</td>
+								<td>\${data[0].september}</td>
+								<td>\${data[0].october}</td>
+								<td>\${data[0].november}</td>
+								<td>\${data[0].december}</td>
+							</tr>
+							<tr>
+								<td>\${data[1].category_name}</td>
+								<td>\${data[1].july}</td>
+								<td>\${data[1].august}</td>
+								<td>\${data[1].september}</td>
+								<td>\${data[1].october}</td>
+								<td>\${data[1].november}</td>
+								<td>\${data[1].december}</td>
+							</tr>
+							<tr>
+								<td>\${data[2].category_name}</td>
+								<td>\${data[2].july}</td>
+								<td>\${data[2].august}</td>
+								<td>\${data[2].september}</td>
+								<td>\${data[2].october}</td>
+								<td>\${data[2].november}</td>
+								<td>\${data[2].december}</td>
+							</tr>
+							<tr>
+								<td>\${data[3].category_name}</td>
+								<td>\${data[3].july}</td>
+								<td>\${data[3].august}</td>
+								<td>\${data[3].september}</td>
+								<td>\${data[3].october}</td>
+								<td>\${data[3].november}</td>
+								<td>\${data[3].december}</td>
+							</tr>
+							<tr>
+								<td>\${data[4].category_name}</td>
+								<td>\${data[4].july}</td>
+								<td>\${data[4].august}</td>
+								<td>\${data[4].september}</td>
+								<td>\${data[4].october}</td>
+								<td>\${data[4].november}</td>
+								<td>\${data[4].december}</td>
+							</tr>
+						</tbody>
+					</table>
 					`;
 				$('#totalOutMonthCategoryByYear').html(html);
 				}

@@ -3,6 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.gdu.cash.restmapper.CashStatsMapper">
+	<select id="selectTotalMaxInOutByYear" parameterType="int" resultType="java.util.Map">
+		SELECT
+			cashbook_kind,
+			nvl(max(case when month(cashbook_date)=1 then cashbook_price END),0) january,
+			nvl(max(case when month(cashbook_date)=2 then cashbook_price END),0) february,
+			nvl(max(case when month(cashbook_date)=3 then cashbook_price END),0) march,
+			nvl(max(case when month(cashbook_date)=4 then cashbook_price END),0) april,
+			nvl(max(case when month(cashbook_date)=5 then cashbook_price END),0) may,
+			nvl(max(case when month(cashbook_date)=6 then cashbook_price END),0) june,
+			nvl(max(case when month(cashbook_date)=7 then cashbook_price END),0) july,
+			nvl(max(case when month(cashbook_date)=8 then cashbook_price END),0) august,
+			nvl(max(case when month(cashbook_date)=9 then cashbook_price END),0) september,
+			nvl(max(case when month(cashbook_date)=10 then cashbook_price END),0) october,
+			nvl(max(case when month(cashbook_date)=11 then cashbook_price END),0) november,
+			nvl(max(case when month(cashbook_date)=12 then cashbook_price END),0) december
+		FROM cashbook
+		WHERE YEAR(cashbook_date) = #{year}
+		GROUP BY cashbook_kind
+	</select>
+	
 	<select id="selectTotalOutMonthCategoryByYear" parameterType="int" resultType="java.util.Map">
 		SELECT 
 			category_name,

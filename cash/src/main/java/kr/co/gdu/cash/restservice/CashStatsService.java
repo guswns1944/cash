@@ -14,6 +14,9 @@ import kr.co.gdu.cash.restmapper.CashStatsMapper;
 public class CashStatsService {
 	@Autowired CashStatsMapper cashStatsMapper;
 	
+	public List<Map<String, Object>> getTotalMaxInOutByYear(int year){
+		return cashStatsMapper.selectTotalMaxInOutByYear(year);
+	}
 	public List<Map<String, Object>> getTotalOutMonthCategoryByYear(int year){
 		return cashStatsMapper.selectTotalOutMonthCategoryByYear(year);
 	}

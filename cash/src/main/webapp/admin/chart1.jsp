@@ -17,7 +17,7 @@
 		<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
-				<h2><a>연도별 월 지출 내역</a></h2>
+				<h2><a>월별 지출 내역</a></h2>
 				<div>
 					<div id="chartTable">
 						<span> 연도를 입력하세요 :</span>

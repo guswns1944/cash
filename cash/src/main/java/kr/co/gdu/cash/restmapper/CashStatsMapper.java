@@ -12,4 +12,5 @@ public interface CashStatsMapper {
 	public Map<String, Object> selectCategoryByYear(int year);
 	public Map<String, Object> selectTotalSumInOutByYear(int year);
 	public List<Map<String, Object>> selectTotalOutMonthCategoryByYear(int year);
+	public List<Map<String, Object>> selectTotalMaxInOutByYear(int year);
 }
