@@ -25,7 +25,7 @@
 	        <a href="/admin/chart6.jsp">월별 최고 수입/지출 내역</a>
 	      </li>
 	      <li>
-	        <a href="/admin/chart7.jsp">chart7</a>
+	        <a href="/admin/chart7.jsp">월별 수입 내역</a>
 	      </li>
 	      <li>
 	        <a href="/admin/chart8.jsp">chart8</a>

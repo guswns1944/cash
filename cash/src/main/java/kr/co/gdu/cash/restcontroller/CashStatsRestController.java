@@ -15,6 +15,10 @@ import kr.co.gdu.cash.restservice.CashStatsService;
 public class CashStatsRestController {
 	@Autowired CashStatsService cashStatsService;
 	//Logger loger = Logger();
+	@GetMapping("/admin/totalInOfMonthByYear/{year}")
+	public Map<String, Object> totalInOfMonthByYear(@PathVariable(name="year") int year){
+		return cashStatsService.getTotalInOfMonthByYear(year);
+	}
 	@GetMapping("/admin/totalMaxInOutByYear/{year}")
 	public List<Map<String, Object>> totalMaxInOutByYear(@PathVariable(name="year") int year){
 		return cashStatsService.getTotalMaxInOutByYear(year);
