@@ -43,6 +43,14 @@
 						</td>
 					</tr>
 				</table>
+				<h3 id="center">첨부파일</h3>
+				<table id="oneListTable">
+					<c:forEach var="nf" items="${noticeOne.noticefile }">
+						<tr>
+							<td><a href="${pageContext.request.contextPath }/upload/${nf.noticefileName}">${nf.noticefileName}</a></td>
+						</tr>
+					</c:forEach>
+				</table>
 				<div id="btnStyle">
 					<a href="/admin/modifyNotice/${noticeOne.noticeId }">수정</a>
 					<a href="/admin/removeNotice/${noticeOne.noticeId }">삭제</a>					

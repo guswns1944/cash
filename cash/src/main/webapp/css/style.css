@@ -280,6 +280,9 @@ hr
 	text-align:right;
 	float:left;
 }
+#content #btnStyle3{
+	text-align:center;
+}
 
 #content #btnStyle2 a{
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -404,8 +407,6 @@ hr
 #content #cashbookTable{
 	width: 100%;
 	table-layout:fixed;
-	word-break;
-	break-all;
 }
 
 #content #cashbookTable th{

@@ -8,10 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.gdu.cash.service.NoticeService;
 import kr.co.gdu.cash.vo.Notice;
+import kr.co.gdu.cash.vo.NoticeForm;
 
 @Controller
 public class NoticeController {
@@ -43,8 +43,8 @@ public class NoticeController {
 	}
 	//공지 입력 액션
 	@PostMapping("/admin/addNotice")
-	public String addNotice(Notice notice) {
-		noticeService.addNotice(notice);
+	public String addNotice(NoticeForm noticeForm) {
+		noticeService.addNotice(noticeForm);
 		return "redirect:/admin/noticeList/1";
 	}
 	//공지 상세보기
@@ -69,10 +69,17 @@ public class NoticeController {
 		model.addAttribute("noticeOne",noticeOne);
 		return "modifyNotice";
 	}
+	//기존 파일 삭제
+	@GetMapping("/admin/removeNoticefileName/{noticeId}/{noticefileId}")
+	public String removenoticefileName(@PathVariable(value="noticeId") int noticeId,
+					@PathVariable(value="noticefileId") int noticefileId) {
+		noticeService.deleteNoticefileName(noticefileId);
+		return "redirect:/admin/modifyNotice/"+noticeId;
+	}
 	//공지 수정 액션
 	@PostMapping("/admin/modifyNotice")
-	public String modifyNotice(Notice notice) {
-		noticeService.modifyNoticeOne(notice);
-		return "redirect:/admin/noticeOne/"+notice.getNoticeId();
+	public String modifyNotice(NoticeForm noticeForm) {
+		noticeService.modifyNoticeOne(noticeForm);
+		return "redirect:/admin/noticeOne/"+noticeForm.getNoticeId();
 	}
 }
