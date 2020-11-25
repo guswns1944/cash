@@ -14,6 +14,9 @@ import kr.co.gdu.cash.restmapper.CashStatsMapper;
 public class CashStatsService {
 	@Autowired CashStatsMapper cashStatsMapper;
 	
+	public Map<String, Object> getTotalInOfMonthByYear(int year){
+		return cashStatsMapper.selectTotalInOfMonthByYear(year);
+	}
 	public List<Map<String, Object>> getTotalMaxInOutByYear(int year){
 		return cashStatsMapper.selectTotalMaxInOutByYear(year);
 	}
@@ -22,8 +25,7 @@ public class CashStatsService {
 	}
 	public Map<String, Object> getTotalOfMonthByYear(int year){
 		return cashStatsMapper.selectTotalOfMonthByYear(year);
-	}
-	
+	}	
 	public Map<String, Object> getTotalOutAndInByYear(int year){
 		return cashStatsMapper.selectTotalOutAndInByYear(year);
 	}
