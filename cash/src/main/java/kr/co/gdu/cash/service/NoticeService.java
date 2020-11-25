@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.gdu.cash.mapper.CashbookMapper;
+import kr.co.gdu.cash.mapper.CommentMapper;
 import kr.co.gdu.cash.mapper.NoticeMapper;
 import kr.co.gdu.cash.mapper.NoticefileMapper;
 import kr.co.gdu.cash.vo.Notice;
@@ -22,10 +23,12 @@ import kr.co.gdu.cash.vo.Noticefile;
 @Service
 @Transactional
 public class NoticeService {
-	private final String PATH ="C:\\Users\\gd7\\Desktop\\git\\cash\\maven.1605832237345\\cash\\src\\main\\webapp\\upload\\";
+	//private final String PATH ="C:\\Users\\gd7\\Desktop\\git\\cash\\maven.1605832237345\\cash\\src\\main\\webapp\\upload\\";
+	private final String PATH ="C:\\Users\\guswn\\OneDrive\\바탕 화면\\git\\cash\\maven.1606098706563\\cash\\src\\main\\webapp\\upload\\";
 	@Autowired private NoticeMapper noticeMapper;
 	@Autowired private CashbookMapper cashbookMapper;
 	@Autowired private NoticefileMapper noticefileMapper;
+	@Autowired private CommentMapper commentMapper;
 	
 	//기존 파일 삭제
 	public void deleteNoticefileName(int noticefileId) {
@@ -81,6 +84,7 @@ public class NoticeService {
 	}
 	//공지사항 삭제
 	public void deleteNotice(int noticeId) {
+		//기존파일 삭제
 		List<String> noticefileNameList = noticefileMapper.selectNoticeFileNameList(noticeId);
 		for(String s : noticefileNameList) {
 			File file = new File(PATH+s);
@@ -88,7 +92,11 @@ public class NoticeService {
 				file.delete();
 			}
 		}
+		//댓긇 삭제
+		commentMapper.deleteNotice(noticeId);
+		//공지파일 삭제
 		noticefileMapper.deleteNoticefile(noticeId);
+		//공지사항 삭제
 		noticeMapper.deleteNotice(noticeId);
 	}
 	//공지사항 추가

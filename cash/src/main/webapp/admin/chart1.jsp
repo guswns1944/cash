@@ -45,7 +45,7 @@
 		$('#chart1').remove();
 		$("#chartContainer").append('<canvas id="chart1"></canvas>');
 		$.ajax({
-			url:'/admin/totalOfMonthByYear/'+$('#year').val(),
+			url:'${path}/admin/totalOfMonthByYear/'+$('#year').val(),
 			type:'get',
 			success: function(data){
 			var ctx = document.getElementById('chart1').getContext('2d');
@@ -97,7 +97,7 @@
 	
 		$('#totalOfMonthByYearTableResult').html('totalOfMonthByYearTableResult');
 		$.ajax({
-			url:'/admin/totalOfMonthByYear/'+$('#year').val(),
+			url:'${path }/admin/totalOfMonthByYear/'+$('#year').val(),
 			type:'get',
 			success: function(data){
 				console.log(data);

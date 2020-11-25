@@ -45,7 +45,7 @@
 		$('#chart6').remove();
 		$("#chartContainer").append('<canvas id="chart6"></canvas>');
 		$.ajax({
-			url:'/admin/totalMaxInOutByYear/'+$('#year').val(),
+			url:'${path }/admin/totalMaxInOutByYear/'+$('#year').val(),
 			type:'get',
 			success: function(data){
 			var ctx = document.getElementById('chart6').getContext('2d');
@@ -124,7 +124,7 @@
 	
 		$('#totalMaxInOutByYear').html('totalMaxInOutByYear');
 		$.ajax({
-			url:'/admin/totalMaxInOutByYear/'+$('#year').val(),
+			url:'${path }/admin/totalMaxInOutByYear/'+$('#year').val(),
 			type:'get',
 			success: function(data){
 				console.log(data);

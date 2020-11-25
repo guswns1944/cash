@@ -23,10 +23,10 @@
 	${currentYear }년 ${currentMonth } 월
 	</a></h2>
 	<div id="btnStyle2">
-		<a href="/admin/cashbookByMonth/pre/${currentYear}/${currentMonth}"><</a>
+		<a href="${path}/admin/cashbookByMonth/pre/${currentYear}/${currentMonth}"><</a>
 	</div>	
 	<div id="btnStyle">
-		<a href="/admin/cashbookByMonth/next/${currentYear}/${currentMonth}">></a>
+		<a href="${path}/admin/cashbookByMonth/next/${currentYear}/${currentMonth}">></a>
 	</div>
 		
 	<div>
@@ -50,7 +50,7 @@
 						</c:if>
 						<c:if test="${i-(firstDayOfWeek-1) >0 }">
 							<td>
-								<div><a href="/admin/cashbookByDay/now/${currentYear }/${currentMonth }/${i-(firstDayOfWeek-1)}">${i-(firstDayOfWeek-1)}</a></div>
+								<div><a href="${path}/admin/cashbookByDay/now/${currentYear }/${currentMonth }/${i-(firstDayOfWeek-1)}">${i-(firstDayOfWeek-1)}</a></div>
 								
 								<c:forEach var="c" items="${cashList}">
 									<c:if test="${i-(firstDayOfWeek-1) == c.dday}">

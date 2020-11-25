@@ -19,10 +19,10 @@
 		<div id="box1" class="post">
 			<h2 class="title" id="center">${currentYear }년${currentMonth }월${currentDay }일</h2>
 			<div id="btnStyle2">
-				<a href="/admin/cashbookByDay/pre/${currentYear }/${currentMonth }/${currentDay }"><</a>
+				<a href="${path}/admin/cashbookByDay/pre/${currentYear }/${currentMonth }/${currentDay }"><</a>
 			</div>
 			<div id="btnStyle">
-				<a href="/admin/cashbookByDay/next/${currentYear }/${currentMonth }/${currentDay }">></a>
+				<a href="${path}/admin/cashbookByDay/next/${currentYear }/${currentMonth }/${currentDay }">></a>
 			</div>
 			
 			<table id="fullListTable">
@@ -45,14 +45,14 @@
 							<td>${c.categoryName }</td>
 							<td>${c.cashbookPrice }</td>
 							<td>${c.cashbookContent }</td>
-							<td><a href="/admin/modifyCashbookByDay/${c.cashbookId }/${currentYear }/${currentMonth }/${currentDay }">수정</a></td>
-							<td><a href="/admin/deleteCashbook/${c.cashbookId }/${currentYear }/${currentMonth }/${currentDay }">삭제</a></td>
+							<td><a href="${path}/admin/modifyCashbookByDay/${c.cashbookId }/${currentYear }/${currentMonth }/${currentDay }">수정</a></td>
+							<td><a href="${path}/admin/deleteCashbook/${c.cashbookId }/${currentYear }/${currentMonth }/${currentDay }">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 			<div id="btnStyle">
-				<a href = "/admin/addCashbook/${currentYear }/${currentMonth }/${currentDay }">수입/지출 등록</a>
+				<a href = "${path}/admin/addCashbook/${currentYear }/${currentMonth }/${currentDay }">수입/지출 등록</a>
 			</div>
 		</div>
 		</div>

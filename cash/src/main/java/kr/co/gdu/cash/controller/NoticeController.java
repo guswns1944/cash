@@ -44,6 +44,7 @@ public class NoticeController {
 	//공지 입력 액션
 	@PostMapping("/admin/addNotice")
 	public String addNotice(NoticeForm noticeForm) {
+		System.out.println(noticeForm);
 		noticeService.addNotice(noticeForm);
 		return "redirect:/admin/noticeList/1";
 	}

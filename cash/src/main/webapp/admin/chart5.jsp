@@ -47,7 +47,7 @@
 		$('#chart5').remove();
 		$("#chartContainer").append('<canvas id="chart5"></canvas>');
 		$.ajax({
-			url:'/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
+			url:'${path }/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
 				let ctx = document.getElementById('chart5').getContext('2d');
@@ -86,14 +86,6 @@
 				            borderColor:[
 				            	'rgba(255, 159, 64, 0.2)'],    
 				                data:[data[3].january,data[3].february,data[3].march,data[3].april,data[3].may,data[3].june,data[3].july,data[3].august,data[3].september,data[3].october,data[3].november,data[3].december],
-				                file:false,
-							},{
-							label:data[4].category_name,
-							backgroundColor:[
-								'rgba(153, 102, 255, 0.2)'],
-				            borderColor:[
-				            	'rgba(153, 102, 255, 0.2)'],    
-				                data:[data[4].january,data[4].february,data[4].march,data[4].april,data[4].may,data[4].june,data[4].july,data[4].august,data[4].september,data[4].october,data[4].november,data[4].december]
 							}]
 						},
 						options:{}
@@ -103,7 +95,7 @@
 		$('#totalOutMonthCategoryByYear').html('totalOutMonthCategoryByYear');
 		$.ajax({
 			
-			url:'/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
+			url:'${path }/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
 			type:'get',
 			dataType: 'json',
 			success:function(data){
@@ -158,15 +150,7 @@
 								<td>\${data[3].may}</td>
 								<td>\${data[3].june}</td>
 							</tr>
-							<tr>
-								<td>\${data[4].category_name}</td>
-								<td>\${data[4].january}</td>
-								<td>\${data[4].february}</td>
-								<td>\${data[4].march}</td>
-								<td>\${data[4].april}</td>
-								<td>\${data[4].may}</td>
-								<td>\${data[4].june}</td>
-							</tr>
+							
 						</tbody>
 					</table>
 					<table id="chartTable">
@@ -218,15 +202,7 @@
 								<td>\${data[3].november}</td>
 								<td>\${data[3].december}</td>
 							</tr>
-							<tr>
-								<td>\${data[4].category_name}</td>
-								<td>\${data[4].july}</td>
-								<td>\${data[4].august}</td>
-								<td>\${data[4].september}</td>
-								<td>\${data[4].october}</td>
-								<td>\${data[4].november}</td>
-								<td>\${data[4].december}</td>
-							</tr>
+							
 						</tbody>
 					</table>
 					`;

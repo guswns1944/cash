@@ -17,7 +17,7 @@
 			<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 				<div id="box1" class="post">
 					<h2>addCashbook</h2>
-					<form method="post" action="/admin/addCashbook/${currentYear }/${currentMonth }/${currentDay }">
+					<form method="post" action="${path}/admin/addCashbook/${currentYear }/${currentMonth }/${currentDay }">
 						<table id="oneListTable">
 							<tr>
 								<td>cashbook_date</td>

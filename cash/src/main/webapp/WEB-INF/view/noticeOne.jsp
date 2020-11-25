@@ -43,7 +43,7 @@
 						</td>
 					</tr>
 				</table>
-				<h3 id="center">첨부파일</h3>
+				<h3 id="center">첨부 파일</h3>
 				<table id="oneListTable">
 					<c:forEach var="nf" items="${noticeOne.noticefile }">
 						<tr>
@@ -51,11 +51,29 @@
 						</tr>
 					</c:forEach>
 				</table>
+				<br><br>
+				<h3 id ="center">댓글 목록</h3>
+				<table id="commentTable">
+					<c:forEach var="n" items="${noticeOne.comment }">
+						<c:if test="${not empty n.commentContent }">
+							<tr>
+								<td>${n.commentContent }</td>
+								<td><a href="${path }/admin/removeComment/${n.commentId}/${noticeOne.noticeId}">삭제</a></td>
+							</tr>
+						</c:if>
+					</c:forEach>
+				</table><br>
+				<h3 id ="center">댓글 작성</h3>
+				<form id="commentTable" method="post" action="${path }/admin/addComment">
+					<input type="hidden" name="noticeId" value="${noticeOne.noticeId }">
+					<textarea name="commentContent" rows="3" cols="50"></textarea>
+					<div id="btnStyle"><button type="submit">댓글 입력</button></div>
+				</form>
 				<div id="btnStyle">
-					<a href="/admin/modifyNotice/${noticeOne.noticeId }">수정</a>
-					<a href="/admin/removeNotice/${noticeOne.noticeId }">삭제</a>					
+					<a href="${path}/admin/modifyNotice/${noticeOne.noticeId }">수정</a>
+					<a href="${path}/admin/removeNotice/${noticeOne.noticeId }">삭제</a>					
 					<div id="btnStyle2">
-						<a href="/admin/noticeList/1">돌아가기</a>
+						<a href="${path}/admin/noticeList/1">돌아가기</a>
 					</div>
 				</div>
 			</div>

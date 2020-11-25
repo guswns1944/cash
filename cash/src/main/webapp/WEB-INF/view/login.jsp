@@ -16,7 +16,7 @@
 <div class="container" style="margin-top:100px;">
 	<div class="row">
 		<h1 style=" text-align: center; width: 50%; margin-left: 25%; padding-top:35px; color: #000;">Cashbook</h1>
-		<form action="/login" method="post" style="text-align: center; width: 50%; margin-left: 25%;">
+		<form action="${pageContext.request.contextPath }/login" method="post" style="text-align: center; width: 50%; margin-left: 25%;">
 			<div style="text-decoration: none;  padding-bottom: 10px; padding-top: 10px;"></div>
 			<div class="form-group">
 				<input type="text" class= "form-control" name="id" placeholder="아이디를 입력해주세요.">

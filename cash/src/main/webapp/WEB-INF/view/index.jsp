@@ -55,7 +55,7 @@
 						<c:forEach var="n" items="${noticeList}">
 							<tr>
 								<td>${n.noticeId}</td>
-								<td><a id = "noticeOne"href="/admin/noticeOne/${n.noticeId }">${n.noticeTitle}</a></td>
+								<td><a id = "noticeOne"href="${path}/admin/noticeOne/${n.noticeId }">${n.noticeTitle}</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

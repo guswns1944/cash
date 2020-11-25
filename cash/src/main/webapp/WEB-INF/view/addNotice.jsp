@@ -22,7 +22,7 @@
 		});		
 		$('#submitBtn').click(function(){
 			let ck = true;
-			$('.boardfile').each(function(index,item){
+			$('.noticefile').each(function(index,item){
 				if($(item).val()==''){
 					
 					ck=false;
@@ -44,7 +44,7 @@
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
 				<h2 class="title" id="center"><a>공지사항 추가</a></h2>
-				<form id="fileuploadForm" method="post" enctype="multipart/form-data" action="/admin/addNotice">
+				<form id="fileuploadForm" method="post" enctype="multipart/form-data" action="${path}/admin/addNotice">
 					<table id="oneListTable">
 						<tr>
 							<td>notice_title</td>

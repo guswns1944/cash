@@ -42,10 +42,10 @@
 <script>
 	//yearChart 클릭
 	$('#totalInOfMoneyByYearChart').click(function(){
-		$('#chart1').remove();
+		$('#chart7').remove();
 		$("#chartContainer").append('<canvas id="chart7"></canvas>');
 		$.ajax({
-			url:'/admin/totalInOfMonthByYear/'+$('#year').val(),
+			url:'${path }/admin/totalInOfMonthByYear/'+$('#year').val(),
 			type:'get',
 			success: function(data){
 			var ctx = document.getElementById('chart7').getContext('2d');
@@ -97,7 +97,7 @@
 	
 		$('#totalInOfMonthByYear').html('totalInOfMonthByYear');
 		$.ajax({
-			url:'/admin/totalInOfMonthByYear/'+$('#year').val(),
+			url:'${path }/admin/totalInOfMonthByYear/'+$('#year').val(),
 			type:'get',
 			success: function(data){
 				console.log(data);

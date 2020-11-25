@@ -35,6 +35,12 @@
 			<result property="noticefileType" column="noticefile_type"/>
 			<result property="noticefileSize" column="noticefile_size"/>
 		</collection>
+		<collection property="comment" ofType="kr.co.gdu.cash.vo.Comment">
+			<result property="commentId" column="comment_id" />
+			<result property="noticeId" column="notice_id" />
+			<result property="commentContent" column="comment_content" />
+			<result property="commentDate" column="comment_date" />
+		</collection>
 	</resultMap>
 	<!-- 공지사항 추가 -->
 	<insert id="insertNotice" parameterType="kr.co.gdu.cash.vo.Notice">
@@ -67,9 +73,16 @@
 			nf.notice_id,
 			nf.noticefile_name,
 			nf.noticefile_type,
-			nf.noticefile_size
-		FROM notice n LEFT JOIN noticefile nf
-		ON n.notice_id = nf.notice_id
+			nf.noticefile_size,
+			c.comment_id,
+			c.notice_id,
+			c.comment_content,
+			c.comment_date
+		FROM 
+			notice n LEFT JOIN noticefile nf
+			ON n.notice_id = nf.notice_id
+			LEFT JOIN comment c
+			ON n.notice_id = c.notice_id
 		WHERE n.notice_id = #{noticeId}
 	</select>
 	<!-- 공지사항 수정 -->

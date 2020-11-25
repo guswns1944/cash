@@ -47,7 +47,7 @@
 		$('#chart4').remove();
 		$("#chartContainer").append('<canvas id="chart4"></canvas>');
 		$.ajax({
-			url:'/admin/totalSumInOutByYear/'+$('#year').val(),
+			url:'${path }/admin/totalSumInOutByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
 				let ctx = document.getElementById('chart4').getContext('2d');
@@ -93,7 +93,7 @@
 		});
 		$('#totalSumInOutByYear').html('totalSumInOutByYear');
 		$.ajax({
-			url:'/admin/totalSumInOutByYear/'+$('#year').val(),
+			url:'${path }/admin/totalSumInOutByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
 				let html=`

@@ -47,7 +47,7 @@
 		$('#doughnutChart').remove();
 		$("#chartContainer").append('<canvas id="doughnutChart"></canvas>');
 		$.ajax({
-			url:'/admin/categoryByYear/'+$('#year').val(),
+			url:'${path }/admin/categoryByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
 				let doughnutCtx = $('#doughnutChart');
@@ -75,7 +75,7 @@
 		});
 		$('#categoryByYear').html('categoryByYear');
 		$.ajax({
-			url:'/admin/categoryByYear/'+$('#year').val(),
+			url:'${path }/admin/categoryByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
 				let html=`

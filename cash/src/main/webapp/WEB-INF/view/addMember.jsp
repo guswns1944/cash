@@ -46,7 +46,7 @@
 			<div id="content"><a class="image-style"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 				<div id="box1" class="post">
 				
-					<form method="post" action="/admin/addMember">
+					<form method="post" action="${path}/admin/addMember">
 						<table id="memberListTable">
 							<tr>
 								<td>ID: </td>

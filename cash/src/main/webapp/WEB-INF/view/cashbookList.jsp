@@ -45,17 +45,17 @@
 			</div>
 			<div id="paging">	
 					<c:if test="${currentPage > 1}">
-						<a href="/admin/cashbookList/1"><<</a>
+						<a href="${path}/admin/cashbookList/1"><<</a>
 					</c:if>
 					<c:choose>
 						<c:when test="${lastPage < 4 }">
 							<c:forEach var="i" begin="${1}" end="${lastPage}">
 								<c:choose>
 									<c:when test="${i eq currentPage}">
-										<a class="currentPage" href="/admin/cashbookList/${i}">${i}</a>	
+										<a class="currentPage" href="${path}/admin/cashbookList/${i}">${i}</a>	
 									</c:when>
 									<c:otherwise>
-										<a href="/admin/cashbookList/${i}">${i}</a>	
+										<a href="${path}/admin/cashbookList/${i}">${i}</a>	
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>
@@ -66,10 +66,10 @@
 									<c:forEach var="i" begin="${1}" end="${5}">
 										<c:choose>
 											<c:when test="${i eq currentPage}">
-												<a class="currentPage" href="/admin/cashbookList/${i}">${i}</a>	
+												<a class="currentPage" href="${path}/admin/cashbookList/${i}">${i}</a>	
 											</c:when>
 											<c:otherwise>
-												<a href="/admin/cashbookList/${i}">${i}</a>	
+												<a href="${path}/admin/cashbookList/${i}">${i}</a>	
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -78,10 +78,10 @@
 									<c:forEach var="i" begin="${lastPage-4}" end="${lastPage}">
 										<c:choose>
 											<c:when test="${i eq currentPage}">
-												<a class="currentPage" href="/admin/cashbookList/${i}">${i}</a>	
+												<a class="currentPage" href="${path}/admin/cashbookList/${i}">${i}</a>	
 											</c:when>
 											<c:otherwise>
-												<a href="/admin/cashbookList/${i}">${i}</a>	
+												<a href="${path}/admin/cashbookList/${i}">${i}</a>	
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -90,10 +90,10 @@
 									<c:forEach var="i" begin="${currentPage-2}" end="${currentPage+2}">
 										<c:choose>
 											<c:when test="${i eq currentPage}">
-												<a class="currentPage" href="/admin/cashbookList/${i}">${i}</a>	
+												<a class="currentPage" href="${path}/admin/cashbookList/${i}">${i}</a>	
 											</c:when>
 											<c:otherwise>
-												<a href="/admin/cashbookList/${i}">${i}</a>	
+												<a href="${path}/admin/cashbookList/${i}">${i}</a>	
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -102,7 +102,7 @@
 						</c:otherwise>
 					</c:choose>
 					<c:if test="${currentPage < lastPage }">
-						<a href="/admin/cashbookList/${lastPage }">>></a>
+						<a href="${path}/admin/cashbookList/${lastPage }">>></a>
 					</c:if>
 				</div>
 		</div>

@@ -48,7 +48,7 @@
 		$("#chartContainer").append('<canvas id="pieChart"></canvas>');
 		$('#pieChart').empty();
 		$.ajax({
-			url:'/admin/totalOutAndInByYear/'+$('#year').val(),
+			url:'${path }/admin/totalOutAndInByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
 				console.log(data);
@@ -70,7 +70,7 @@
 		});
 		$('#totalOutAndInByYear').html('totalOutAndInByYear');
 			$.ajax({
-				url:'/admin/totalOutAndInByYear/'+$('#year').val(),
+				url:'${path }/admin/totalOutAndInByYear/'+$('#year').val(),
 				type:'get',
 				success: function(data){
 					console.log(data);

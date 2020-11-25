@@ -20,7 +20,7 @@
 					<!-- 공지 -->
 					<h2 class="title" id="center"><a>공지사항</a></h2>
 					<div id="btnStyle">
-					<a href="/admin/addNotice">공지사항 등록</a>
+					<a href="${path}/admin/addNotice">공지사항 등록</a>
 					</div>
 					<table id="noticeListTable">
 						<thead>
@@ -34,7 +34,7 @@
 							<c:forEach var="n" items="${noticeList }">
 								<tr>
 									<td>${n.noticeId }</td>
-									<td><a id="noticeOne" href="/admin/noticeOne/${n.noticeId }">${n.noticeTitle }</a></td>
+									<td><a id="noticeOne" href="${path}/admin/noticeOne/${n.noticeId }">${n.noticeTitle }</a></td>
 									<td>${n.noticeDate }</td>
 								</tr>
 							</c:forEach>
@@ -43,17 +43,17 @@
 				</div>
 				<div id="paging">
 					<c:if test="${currentPage > 1}">
-						<a href="/admin/noticeList/1"><<</a>
+						<a href="${path}/admin/noticeList/1"><<</a>
 					</c:if>
 					<c:choose>
 						<c:when test="${lastPage < 4 }">
 							<c:forEach var="i" begin="${1}" end="${lastPage}">
 								<c:choose>
 									<c:when test="${i eq currentPage}">
-										<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+										<a class="currentPage" href="${path}/admin/noticeList/${i}">${i}</a>	
 									</c:when>
 									<c:otherwise>
-										<a href="/admin/noticeList/${i}">${i}</a>	
+										<a href="${path}/admin/noticeList/${i}">${i}</a>	
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>
@@ -64,10 +64,10 @@
 									<c:forEach var="i" begin="${1}" end="${5}">
 										<c:choose>
 											<c:when test="${i eq currentPage}">
-												<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+												<a class="currentPage" href="${path}/admin/noticeList/${i}">${i}</a>	
 											</c:when>
 											<c:otherwise>
-												<a href="/admin/noticeList/${i}">${i}</a>	
+												<a href="${path}/admin/noticeList/${i}">${i}</a>	
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -76,10 +76,10 @@
 									<c:forEach var="i" begin="${lastPage-4}" end="${lastPage}">
 										<c:choose>
 											<c:when test="${i eq currentPage}">
-												<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+												<a class="currentPage" href="${path}/admin/noticeList/${i}">${i}</a>	
 											</c:when>
 											<c:otherwise>
-												<a href="/admin/noticeList/${i}">${i}</a>	
+												<a href="${path}/admin/noticeList/${i}">${i}</a>	
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -88,10 +88,10 @@
 									<c:forEach var="i" begin="${currentPage-2}" end="${currentPage+2}">
 										<c:choose>
 											<c:when test="${i eq currentPage}">
-												<a class="currentPage" href="/admin/noticeList/${i}">${i}</a>	
+												<a class="currentPage" href="${path}/admin/noticeList/${i}">${i}</a>	
 											</c:when>
 											<c:otherwise>
-												<a href="/admin/noticeList/${i}">${i}</a>	
+												<a href="${path}/admin/noticeList/${i}">${i}</a>	
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -100,7 +100,7 @@
 						</c:otherwise>
 					</c:choose>
 					<c:if test="${currentPage < lastPage }">
-						<a href="/admin/noticeList/${lastPage }">>></a>
+						<a href="${path}/admin/noticeList/${lastPage }">>></a>
 					</c:if>
 				</div>
 			</div>

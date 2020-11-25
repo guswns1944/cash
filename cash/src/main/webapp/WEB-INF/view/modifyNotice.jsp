@@ -43,7 +43,7 @@
 	<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 		<div id="box1" class="post">
 			<h2 class="title" id="center"><a>공지 수정</a></h2>
-			<form id= "fileUpdateForm" method="post" enctype="multipart/form-data" action="/admin/modifyNotice">
+			<form id= "fileUpdateForm" method="post" enctype="multipart/form-data" action="${path}/admin/modifyNotice">
 				<table id="oneListTable">
 						<tr>
 							<td>notice_id :</td>
@@ -69,8 +69,8 @@
 									<td>기존 파일 : </td>
 									<td>
 									<div id="btnStyle3">
-										<a href="${pageContext.request.contextPath }/upload/${nf.noticefileName}">${nf.noticefileName }</a>
-										<a href="/admin/removeNoticefileName/${noticeOne.noticeId }/${nf.noticefileId }">파일삭제</a>
+										<a href="${path}/upload/${nf.noticefileName}">${nf.noticefileName }</a>
+										<a href="${path}/admin/removeNoticefileName/${noticeOne.noticeId }/${nf.noticefileId }">파일삭제</a>
 									</div>
 									</td>	
 								</tr>	
