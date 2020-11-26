@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <div id="sidebar">
+  <div id="mainbar">
   	<div id="logo">
   		<h1><a href="${pageContext.request.contextPath}/admin/index">Cashbook</a></h1>
   	</div>
@@ -22,7 +22,7 @@
 	        <a href="${pageContext.request.contextPath}/admin/chart1.jsp">chart</a>
 	      </li>
 	       <li >
-	        <a href="${pageContext.request.contextPath}/admin/addMember">맴버추가</a>
+	        <a href="${pageContext.request.contextPath}/admin/addMember">sign up</a>
 	      </li>
 	      
 	      <li >

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.gdu.cash.mapper.VisitorbookMapper">
+	<select id="selectVisitorbookListByPage" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Visitorbook">
+		SELECT 
+			visitorbook_id visitorbookId,
+			visitorbook_writer visitorbookWriter,
+			visitorbook_content visitorbookContent,
+			visitorbook_date visitorbookDate
+		FROM visitorbook
+		ORDER BY visitorbook_id DESC
+		LIMIT #{beginRow}, #{rowPerPage}
+	</select>
+	<select id="selectVisitorbookListCount" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM visitorbook
+	</select>
+	<insert id="insertVisitorbook" parameterType="kr.co.gdu.cash.vo.Visitorbook">
+		INSERT INTO visitorbook(
+			visitorbook_writer,
+			visitorbook_content,
+			visitorbook_date
+		) VALUES (
+			#{visitorbookWriter},
+			#{visitorbookContent},
+			NOW()
+		)
+		
+	</insert>
+	<delete id="deleteVisitorbook" parameterType="int">
+		DELETE FROM visitorbook
+		WHERE visitorbook_id = #{visitorbookId}
+	</delete>
+</mapper>

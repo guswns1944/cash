@@ -8,10 +8,10 @@ body
 	margin-top: 50px;
 	margin-bottom: 20px;
 	padding: 0px;
-	background: #000000;
+	background: #ffffff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10pt;
-	color: #6F644C;
+	color: #000000;
 }
 
 h1, h2, h3
@@ -67,7 +67,7 @@ hr
 
 .container
 {
-	width: 1000px;
+	width: 1200px;
 	margin: 0px auto;
 }
 
@@ -92,6 +92,7 @@ hr
 #logo h1, #logo p
 {
 	margin: 0px;
+	padding-bottom: 20px;
 	line-height: normal;
 }
 
@@ -99,10 +100,10 @@ hr
 {
 	padding-left: 30px;
 	text-decoration: none;
-	font-family: 'Satisfy', cursive;
-	font-size: 2.20em;
+	font-family: "Love Ya Like A Sister", cursive;
+	font-size: 2.0em;
 	font-weight: 700;
-	color: #FFFFFF;
+	color: #000000;
 }
 #right{
 	text-align:right;
@@ -120,26 +121,57 @@ hr
 #menu ul
 {
 	margin: 0px;
-	padding: 20px 0px 0px 0px;
+	padding: 10px 0px 15px 0px;
 	list-style: none;
 	line-height: normal;
 }
 
 #menu li
 {
-	padding: 0px 0px 20px 0px;
+	padding: 0px 25px 23px 0px;
+	float: left;
 }
 
 #menu a
 {
 	text-decoration: none;
 	text-transform: uppercase;
-	font-family: 'Fjalla One', sans-serif;
-	font-size: 1.50em;
-	color: #FFFFFF;
+	font-family: 'Times New Roman', sans-serif;
+	font-size: 1.40em;
+	color: #000000;
 }
 
 #menu a:hover
+{
+	text-decoration: underline;
+}
+#menu2
+{
+}
+
+#menu2 ul
+{
+	margin: 0px;
+	padding: 20px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu2 li
+{
+	padding: 0px 0px 20px 0px;
+}
+
+#menu2 a
+{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Times New Roman', sans-serif;
+	font-size: 1.40em;
+	color: #000000;
+}
+
+#menu2 a:hover
 {
 	text-decoration: underline;
 }
@@ -156,11 +188,11 @@ hr
 #content
 {
 	position: absolute;
-	right: 10px;
-	width: 725px;
+	right: 220px;
+	width: 800px;
 	padding: 10px 10px 40px 10px;
-	background: #EAEAEA;
-	box-shadow: inset 0px 0px 0px 10px rgba(255, 255, 255,0.50);
+	background: #d9e6ed;
+	box-shadow: inset 0px 0px 0px 10px rgb(237, 231, 222);
 	border-radius: 40px 0px 40px 0px;
 }
 
@@ -190,7 +222,7 @@ hr
 #content #noticeListTable{
 	width: 100%;
 	text-align: center;
-	font-size: 17px;
+	font-size: 20px;
 	margin: 20px 0px 0px 0px;
 }
 
@@ -211,8 +243,9 @@ hr
 }
 
 #content #inOutListTable{
+	width:29%;
 	float:left;
-    font-size:23px;
+    font-size:24px;
     margin: 0px 10px 40px 15px;
     text-align:center;
 }
@@ -517,20 +550,26 @@ hr
 
 /** SIDEBAR */
 
+#mainbar
+{
+	position: relative;
+	width: 100%;
+	top: 50px;
+}
 #sidebar
 {
 	position: absolute;
 	width: 270px;
-	left: 10px;
-	top: 50px;
+	left: -10px;
+	top: 300px;
 }
 
 .box
 {
 	overflow: hidden;
 	padding: 40px 40px;
-	background: #000000;
-	box-shadow: inset 0px 0px 0px 10px rgba(255, 255, 255,0.90);
+	background: #d9e6ed;
+	box-shadow: inset 0px 0px 0px 10px rgb(237, 231, 222);
 	border-radius: 0px 40px 0px 40px;
 }
 

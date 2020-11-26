@@ -47,8 +47,8 @@ public class NoticeService {
 	public void modifyNoticeOne(NoticeForm noticeForm){
 		Notice notice = new Notice();
 		notice.setNoticeId(noticeForm.getNoticeId());
-		notice.setNoticeTitle(noticeForm.getNoticeTitle());
-		notice.setNoticeContent(noticeForm.getNoticeContent());
+		notice.setNoticeTitle(noticeForm.getNoticeTitle().replaceAll("(?i)<script", "&lt;script"));
+		notice.setNoticeContent(noticeForm.getNoticeContent().replaceAll("(?i)<script", "&lt;script"));
 		noticeMapper.modifyNoticeOne(notice);
 		
 		List<Noticefile> noticefile = null;
@@ -102,8 +102,8 @@ public class NoticeService {
 	//공지사항 추가
 	public void addNotice(NoticeForm noticeForm){
 		Notice notice = new Notice();
-		notice.setNoticeTitle(noticeForm.getNoticeTitle());
-		notice.setNoticeContent(noticeForm.getNoticeContent());
+		notice.setNoticeTitle(noticeForm.getNoticeTitle().replaceAll("(?i)<script", "&lt;script"));
+		notice.setNoticeContent(noticeForm.getNoticeContent().replaceAll("(?i)<script", "&lt;script"));
 		noticeMapper.insertNotice(notice);
 		
 		List<Noticefile> noticefile = null;

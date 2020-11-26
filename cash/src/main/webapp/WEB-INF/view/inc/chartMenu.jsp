@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <div id="sidebar">
-  	<div id="logo">
-  		<h1><a href="${pageContext.request.contextPath}/admin/index">Cashbook</a></h1>
-  	</div>
-  	<div id="menu" class="box">
+  	
+  	<div id="menu2" class="box">
 	    <ul>
 	      <li>
 	        <a href="${pageContext.request.contextPath}/admin/chart1.jsp">월별 지출 내역</a>
