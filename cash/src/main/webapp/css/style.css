@@ -188,7 +188,7 @@ hr
 #content
 {
 	position: absolute;
-	right: 220px;
+	right: 160px;
 	width: 800px;
 	padding: 10px 10px 40px 10px;
 	background: #d9e6ed;
@@ -304,6 +304,7 @@ hr
 	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
 	background-color:#e9e9e9;
 }
+
 
 #content #btnStyle{
 	text-align:right;
@@ -516,6 +517,61 @@ hr
 #content #cashStyle .green{
 	color: #00B700;
 }
+#content #visitorTable{
+	width: 100%;
+	text-align: left;
+	margin: 0px 0px 10px 0px;
+	border-collapse: collapse;
+}
+
+#content #visitorTable td{
+	padding: 3px;
+    font-weight: bold;
+    color: #000000;
+    
+}
+
+#content #visitorTable input[type=text]{
+	border-radius:5px;
+	padding:4px;
+	width: 100%;
+}
+
+#content #visitorTable textarea{
+	border-radius:5px;
+	width: 100%;
+	height: 120px;
+}
+
+#content #visitorTable2{
+	width: 100%;
+	text-align: left;
+	font-size:15px;
+	margin: 0px 0px 10px 0px;
+	border-collapse: collapse;
+}
+
+#content #visitorTable2 th{
+    font-weight: bold;
+    color: #000000;
+    padding:10px;
+    border-bottom:1px solid #000000;
+}
+#content #visitorTable2 .th3{
+    width:160px;
+}
+
+#content #visitorTable2 td{
+	height:auto;
+	padding: 3px;
+    color: #000000;
+    padding:10px;
+}
+
+#content #visitorTable2 a{
+	text-decoration:none;
+	float: right;
+}
 #content #chartTable{
 	width: 100%;
 	font-size:15px;
@@ -559,8 +615,8 @@ hr
 #sidebar
 {
 	position: absolute;
-	width: 270px;
-	left: -10px;
+	width: 320px;
+	left: -50px;
 	top: 300px;
 }
 

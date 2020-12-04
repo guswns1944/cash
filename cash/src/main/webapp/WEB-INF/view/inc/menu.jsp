@@ -22,6 +22,9 @@
 	        <a href="${pageContext.request.contextPath}/admin/chart1.jsp">chart</a>
 	      </li>
 	       <li >
+	        <a href="${pageContext.request.contextPath}/admin/visitorbookList/1">visitors</a>
+	      </li>
+	       <li >
 	        <a href="${pageContext.request.contextPath}/admin/addMember">sign up</a>
 	      </li>
 	      

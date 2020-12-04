@@ -20,7 +20,7 @@
 			<div id="box1" class="post">
 				<h2 class="title" id="center"><a> 방명록</a></h2>
 				<form method="post" action="${path }/admin/addvisitorBook">
-					<table>
+					<table id="visitorTable">
 						<tr>
 							<td>writer :</td>
 							<td><input type="text" name="visitorbookWriter"></td>
@@ -30,20 +30,22 @@
 							<td><textarea name="visitorbookContent"></textarea></td>
 						</tr>
 					</table>
+					<div id="btnStyle">
 					<button type="submit">작성</button>
+					</div>
 				</form>
-				<table>
+				<table id="visitorTable2">
 					<c:forEach var="v" items="${visitorbookList }">
 						<thead>
 							<tr>
-								<th>${v.visitorbookId }</th>
+								<th>no.${v.visitorbookId }</th>
 								<th>${v.visitorbookWriter }</th>
-								<th>${v.visitorbookDate }</th>
+								<th class="th3">${v.visitorbookDate }</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>${v.visitorbookContent }</td>
+								<td colspan="2">${v.visitorbookContent }</td>
 								<td><a href="${path}/admin/deletevisitorBook/${v.visitorbookId}">삭제</a></td>
 							</tr>
 						</tbody>
