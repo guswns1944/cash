@@ -14,7 +14,7 @@
 <div id="wrapper">
 	<div id="page" class="container">
 		<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
+		<div id="content">
 			<div id="box1" class="post">
 				<h2 class="title" id="center"><a>공지 상세보기</a></h2>
 				<table id="oneListTable">

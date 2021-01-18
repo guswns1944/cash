@@ -25,9 +25,6 @@
 	      <li>
 	        <a href="${pageContext.request.contextPath}/admin/chart7.jsp">월별 수입 내역</a>
 	      </li>
-	      <li>
-	        <a href="${pageContext.request.contextPath}/admin/chart8.jsp">chart8</a>
-	      </li>
 	    </ul>
 	</div>
   </div>

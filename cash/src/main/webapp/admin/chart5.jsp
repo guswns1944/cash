@@ -15,7 +15,7 @@
 	<div id="page" class="container">
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
-		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
+		<div id="content">
 			<div id="box1" class="post">
 				<h2><a>월별 지출 카테고리</a></h2>
 				<!-- chart -->
@@ -50,6 +50,7 @@
 			url:'${path }/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
 			type:'get',
 			success:function(data){
+				if(data.length !=0){
 				let ctx = document.getElementById('chart5').getContext('2d');
 				let chart = new Chart(ctx,{
 					type:'line',
@@ -90,15 +91,18 @@
 						},
 						options:{}
 					});
+				}else{
+					$("#chartContainer").text('');
 				}
+			}
 		});
 		$('#totalOutMonthCategoryByYear').html('totalOutMonthCategoryByYear');
-		$.ajax({
-			
+		$.ajax({	
 			url:'${path }/admin/totalOutMonthCategoryByYear/'+$('#year').val(),
 			type:'get',
 			dataType: 'json',
 			success:function(data){
+				if(data.length !=0){
 				console.log(data);
 				let html=`
 					<table id="chartTable">
@@ -207,7 +211,10 @@
 					</table>
 					`;
 				$('#totalOutMonthCategoryByYear').html(html);
+				}else{
+					$('#totalOutMonthCategoryByYear').text('해당 연도의 데이터가 없습니다.')
 				}
+			}
 		});
 	});
 </script>

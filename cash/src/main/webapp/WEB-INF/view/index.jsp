@@ -16,10 +16,10 @@
 <div id="wrapper">
 	<div id="page" class="container">
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-		<div id="content"><a class="image-style" ><img src="https://ifh.cc/g/zFOXWZ.jpg" width="800" height="300" alt="" /></a>
+		<div id="content">
 			<div id="box1" class="post">
 				<h2 class="title"><a>welcome to my cashbook</a></h2>
-				<p>프로젝트 설명</p>
+				<p>Spring boot를 이용한 가계부 프로젝트</p>
 			</div>
 			<div id="box2">
 				<h2 class="subtitle">Summary of recent income/expenses</h2>

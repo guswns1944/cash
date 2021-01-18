@@ -15,7 +15,7 @@
 	<div id="page" class="container">
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
-		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
+		<div id="content">
 			<div id="box1" class="post">
 				<h2><a>연도별 수입/지출</a></h2>
 				<!-- chart -->
