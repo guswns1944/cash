@@ -16,6 +16,9 @@ public class CommentService {
 		return commentMapper.deleteComment(commentId);
 	}
 	public int addComment(Comment comment) {
-		return commentMapper.insertComment(comment);
+		Comment co = new Comment();
+		co.setCommentContent(comment.getCommentContent().replaceAll("(?i)<script", "&lt;script"));
+		co.setNoticeId(comment.getNoticeId());
+		return commentMapper.insertComment(co);
 	}
 }

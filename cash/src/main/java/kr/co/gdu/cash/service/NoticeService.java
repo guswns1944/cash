@@ -23,17 +23,26 @@ import kr.co.gdu.cash.vo.Noticefile;
 @Service
 @Transactional
 public class NoticeService {
-	//private final String PATH ="C:\\Users\\gd7\\Desktop\\git\\cash\\maven.1605832237345\\cash\\src\\main\\webapp\\upload\\";
-	private final String PATH ="C:\\Users\\guswn\\OneDrive\\바탕 화면\\git\\cash\\maven.1606098706563\\cash\\src\\main\\webapp\\upload\\";
 	@Autowired private NoticeMapper noticeMapper;
 	@Autowired private CashbookMapper cashbookMapper;
 	@Autowired private NoticefileMapper noticefileMapper;
 	@Autowired private CommentMapper commentMapper;
-	
+	private static String OS = System.getProperty("os.name").toLowerCase();
 	//기존 파일 삭제
 	public void deleteNoticefileName(int noticefileId) {
+		//서버 파일의 상대경로
+		String rootPath = "";
+        String attachPath = "";
 		String noticefileName = noticefileMapper.selectNoticeFileName(noticefileId);
-			File file = new File(PATH+noticefileName);
+		if ( OS.indexOf("nux") >= 0) {
+            rootPath = "/var/lib/tomcat9/webapps/cash/";
+            attachPath = "upload/";
+        } else {
+            File file = new File("");
+            rootPath =  file.getAbsolutePath() + "\\src\\main\\webapp\\";
+            attachPath = "upload\\";
+        }
+			File file = new File(rootPath+attachPath+noticefileName);
 			if(file.exists()) {
 				file.delete();
 			}
@@ -64,8 +73,20 @@ public class NoticeService {
 				nf.setNoticefileType(mf.getContentType());
 				nf.setNoticefileSize(mf.getSize());
 				noticefile.add(nf);
+				//파일의 상대경로
+				String rootPath = "";
+				String attachPath = "";
+				if ( OS.indexOf("nux") >= 0) {
+		            rootPath = "/var/lib/tomcat9/webapps/cash/";
+		            attachPath = "upload/";
+		        } else {
+		            File file = new File("");
+		            rootPath =  file.getAbsolutePath() + "\\src\\main\\webapp\\";
+		            attachPath = "upload\\";
+		        }
+				File f = new File(rootPath+attachPath+filename+ext);
 				try {
-					mf.transferTo(new File(PATH+filename+ext));
+					mf.transferTo(f);
 				} catch(Exception e) {
 					e.printStackTrace();
 					throw new RuntimeException();
@@ -87,7 +108,18 @@ public class NoticeService {
 		//기존파일 삭제
 		List<String> noticefileNameList = noticefileMapper.selectNoticeFileNameList(noticeId);
 		for(String s : noticefileNameList) {
-			File file = new File(PATH+s);
+			//파일의 상대경로
+			String rootPath = "";
+			String attachPath = "";
+			if ( OS.indexOf("nux") >= 0) {
+	            rootPath = "/var/lib/tomcat9/webapps/cash/";
+	            attachPath = "upload/";
+	        } else {
+	            File file = new File("");
+	            rootPath =  file.getAbsolutePath() + "\\src\\main\\webapp\\";
+	            attachPath = "upload\\";
+	        }
+			File file = new File(rootPath+attachPath+s);
 			if(file.exists()) {
 				file.delete();
 			}
@@ -119,8 +151,20 @@ public class NoticeService {
 				nf.setNoticefileType(mf.getContentType());
 				nf.setNoticefileSize(mf.getSize());
 				noticefile.add(nf);
+				
+				//파일의 상대경로
+				String rootPath = "";
+				String attachPath = "";
+				if ( OS.indexOf("nux") >= 0) {
+		            rootPath = "/var/lib/tomcat9/webapps/cash/";
+		            attachPath = "upload/";
+		        } else {
+		            File file = new File("");
+		            rootPath =  file.getAbsolutePath() + "\\src\\main\\webapp\\";
+		            attachPath = "upload\\";
+		        }
 				try {
-					mf.transferTo(new File(PATH+filename+ext));
+					mf.transferTo(new File(rootPath+attachPath+filename+ext));
 				} catch(Exception e) {
 					e.printStackTrace();
 					throw new RuntimeException();
