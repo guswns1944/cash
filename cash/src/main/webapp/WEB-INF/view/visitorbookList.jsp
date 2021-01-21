@@ -39,18 +39,79 @@
 						<thead>
 							<tr>
 								<th>no.${v.visitorbookId }</th>
-								<th>${v.visitorbookWriter }</th>
+								<th>작성자 : ${v.visitorbookWriter }</th>
 								<th class="th3">${v.visitorbookDate }</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="2">${v.visitorbookContent }</td>
-								<td><a href="${path}/admin/deletevisitorBook/${v.visitorbookId}">삭제</a></td>
+								<td colspan="2"><textarea readonly = "readonly" style="width:100%;"rows="4">${v.visitorbookContent }</textarea></td>
+								<td><a style="float:left;" href="${path}/admin/deletevisitorBook/${v.visitorbookId}">삭제</a></td>
 							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
+				<div id="paging">	
+					<c:if test="${currentPage > 1}">
+						<a href="${path}/admin/visitorbookList/1"><<</a>
+					</c:if>
+					<c:choose>
+						<c:when test="${lastPage < 4 }">
+							<c:forEach var="i" begin="${1}" end="${lastPage}">
+								<c:choose>
+									<c:when test="${i eq currentPage}">
+										<a class="currentPage" href="${path}/admin/visitorbookList/${i}">${i}</a>	
+									</c:when>
+									<c:otherwise>
+										<a href="${path}/admin/visitorbookList/${i}">${i}</a>	
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${currentPage < 4}">
+									<c:forEach var="i" begin="${1}" end="${5}">
+										<c:choose>
+											<c:when test="${i eq currentPage}">
+												<a class="currentPage" href="${path}/admin/visitorbookList/${i}">${i}</a>	
+											</c:when>
+											<c:otherwise>
+												<a href="${path}/admin/visitorbookList/${i}">${i}</a>	
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+								<c:when test="${currentPage > lastPage-3}">
+									<c:forEach var="i" begin="${lastPage-4}" end="${lastPage}">
+										<c:choose>
+											<c:when test="${i eq currentPage}">
+												<a class="currentPage" href="${path}/admin/visitorbookList/${i}">${i}</a>	
+											</c:when>
+											<c:otherwise>
+												<a href="${path}/admin/visitorbookList/${i}">${i}</a>	
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="i" begin="${currentPage-2}" end="${currentPage+2}">
+										<c:choose>
+											<c:when test="${i eq currentPage}">
+												<a class="currentPage" href="${path}/admin/visitorbookList/${i}">${i}</a>	
+											</c:when>
+											<c:otherwise>
+												<a href="${path}/admin/visitorbookList/${i}">${i}</a>	
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</c:otherwise>
+					</c:choose>
+					<c:if test="${currentPage < lastPage }">
+						<a href="${path}/admin/visitorbookList/${lastPage }">>></a>
+					</c:if>
 			</div>
 		</div>
 	</div>

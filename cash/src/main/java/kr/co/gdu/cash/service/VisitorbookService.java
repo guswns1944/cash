@@ -27,7 +27,10 @@ public class VisitorbookService {
 		return visitorbookMapper.selectVisitorbookListCount();
 	}
 	public void insertVisitorbook(Visitorbook visitorbook) {
-		visitorbookMapper.insertVisitorbook(visitorbook);
+		Visitorbook visit = new Visitorbook();
+		visit.setVisitorbookWriter(visitorbook.getVisitorbookWriter().replaceAll("(?i)<script", "&lt;script"));
+		visit.setVisitorbookContent(visitorbook.getVisitorbookContent().replaceAll("(?i)<script", "&lt;script"));
+		visitorbookMapper.insertVisitorbook(visit);
 	}
 	public int deleteVisitorbook(int visitorbookId) {
 		return visitorbookMapper.deleteVisitorbook(visitorbookId);
