@@ -19,10 +19,10 @@
 		<form action="${pageContext.request.contextPath }/login" method="post" style="text-align: center; width: 50%; margin-left: 25%;">
 			<div style="text-decoration: none;  padding-bottom: 10px; padding-top: 10px;"></div>
 			<div class="form-group">
-				<input type="text" class= "form-control" name="id" placeholder="아이디를 입력해주세요.">
+				<input type="text" class= "form-control" name="id" value="goodee">
 			</div>
 			<div class="form-group" style="">
-				<input type="password" class= "form-control"name="pw" placeholder="비밀번호를 입력해주세요.">
+				<input type="password" class= "form-control"name="pw" value="1234">
 			</div>
 			<div>
 				<button type="submit"  style=" color: #fff; font-size: 14px; width: 100%; height: 44px; background: #808080;" >로그인</button>
